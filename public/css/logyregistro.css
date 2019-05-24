@@ -1,0 +1,50 @@
+.log {
+  background-color: black;
+  background-image: url("../img/fondo-form.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Fjalla One', sans-serif;
+  justify-content: center;
+  color: white;
+  height: 100%;
+  text-align: center;
+  padding: 5%;
+}
+.log h2{
+  color: black;
+}
+form{
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5%;
+}
+.form-group {
+  display: inline;
+}
+input {
+	margin-bottom: 25px;
+}
+form button:hover {
+	background-color: #fff;
+	color: #000;
+}
+
+form.btn btn-outline-light {
+  padding: 10%;
+}
+
+.login {
+  max-width: 500px;
+  margin: auto;
+  text-align: left;
+}
+.login button {
+  margin-top: 10px;
+}
+.login .form-check {
+  margin-top: 20px;
+}
+.invalid-feedback {
+  margin-top: -17px;
+}

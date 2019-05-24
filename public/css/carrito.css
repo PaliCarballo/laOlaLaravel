@@ -1,0 +1,47 @@
+
+div.productos {
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
+  justify-content: space-around;
+  padding: 5%;
+  background-color: #EAECEE;
+  flex-wrap: wrap;
+
+
+}
+
+div.cardp {
+  margin: 0;
+  width: 100%;
+  padding: 2%;
+  background-color: black;
+  margin-bottom: 30%;
+
+
+
+}
+
+img {
+  width: 259px;
+  height: 195px;
+
+  }
+
+div.cardp a {
+  transition:0.2s background-color;
+}
+
+@media (min-width:768px) {
+  div.cardp {
+    width: 50%;
+}
+}
+
+@media (min-width:1440px ) {
+  div.cardp {
+    width: 25%;
+
+  }
+
+}

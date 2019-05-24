@@ -11,11 +11,15 @@
 |
 */
 
-Route::get('/index', function () {
-    echo 'hola';
+Route::get('/', 'HomeController@index');
+
+Route::get('/preguntas', 'HomeController@faqs');
+
+Route::get('/registro', function () {
+    return view('register');
 });
 
-
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login', function () {
+    return view('login');
 });
+
