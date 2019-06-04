@@ -3,15 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Product;
 
 class ProductoController extends Controller
 {
+    public function oneProduct($id){
+        
+      //  $genres = Genre::where('id', '=', $id)->first();
+
+        $products = Product::find($id);
+        // Hace un where, solo para llave primaria
+        dd($products);
+    
+    }
     public function createProduct() {
         return view('product.create');
     }
 
     public function index(){
-        $products = \App\Product::all();
+        $products = Product::all();
 
         //return view('product.products')->with(['products'=>$products]);
 
@@ -34,13 +44,13 @@ class ProductoController extends Controller
 
         //si las validaciones estan bien procedo a guardar
         //PRIMERA FORMA
-        Product::create(
-            [
-                'name' => $request->input('name'),
-                'description' => $request->input('description'),
-                'price' => $request->input('price')
-            ]
-        );
+        // Product::create(
+        //     [
+        //         'name' => $request->input('name'),
+        //         'description' => $request->input('description'),
+        //         'price' => $request->input('price')
+        //     ]
+        // );
 
         //SEGUNDA FORMA
         //$product = new Product();
@@ -48,10 +58,15 @@ class ProductoController extends Controller
         //$product->save();
 
         //TERCERA FORMA
-        //$product = new Product([
-        //    'name' => $request->input('name')
-        //]);
-        //$product->save();
+        $product = new Product([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'price' => $request->input('price'),
+            'avatar' => 'imagen.jpg',
+        ]);
+        $product->save();
+
+        return redirect('/productos');
     }
 
 }

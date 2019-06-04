@@ -4,11 +4,7 @@
 
 
                
-        @foreach($products as $product)
-            {{$product->name}}<br>
-        
-        @endforeach
-
+      
 
 <section id="productosDestacados">
         <div class="titulo-productos">
@@ -16,15 +12,19 @@
           <hr>
         </div>
             <div class="container-productos">
+                @foreach($products as $product)
                 <article class="producto">
                     <div class="producto-hover">
                         <div class="producto-hover-content">
-                            <ion-icon name="heart"></ion-icon> <h4>Combo 1</h4>
+                            <ion-icon name="heart"></ion-icon> <h4>
+                                <a href='/productos/{id}'>{{$product->name}}</a>
+                            </h4>
                         </div>
                     </div>
                     <img src="img/combo1.jpg" alt="Combo 1 Hamburguesas Veggie">
                 </article>
-                <article class="producto">
+                @endforeach
+                {{-- <article class="producto">
                     <div class="producto-hover">
                         <div class="producto-hover-content">
                             <ion-icon name="heart"></ion-icon> <h4>Combo 2</h4>
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <img src="img/combo6.jpg" alt="Combo 6 Hamburguesas Veggie">
-                </article>
+                </article> --}}
             </div>
       </section>
 

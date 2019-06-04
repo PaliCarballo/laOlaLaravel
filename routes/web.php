@@ -17,7 +17,8 @@ Route::get('/preguntas', 'HomeController@faqs');
 
 Route::get('/productos', 'ProductoController@index');
 Route::get('/productos/agregar', 'ProductoController@createProduct');
-Route::post('/AgregarProducto', 'ProductoController@save');
+Route::post('/productos', 'ProductoController@save');
+Route::get('/productos/{id}', 'ProductoController@oneProduct');
 
 
 Route::get('/registro', function () {
