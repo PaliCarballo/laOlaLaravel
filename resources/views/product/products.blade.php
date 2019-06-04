@@ -17,7 +17,7 @@
                     <div class="producto-hover">
                         <div class="producto-hover-content">
                             <ion-icon name="heart"></ion-icon> <h4>
-                                <a href='/productos/{id}'>{{$product->name}}</a>
+                            <a href='/productos/{{$product->id}}'>{{$product->name}}</a>
                             </h4>
                         </div>
                     </div>
