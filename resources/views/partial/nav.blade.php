@@ -11,21 +11,21 @@
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="css/logyregistro.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/logyregistro.css">
     <link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/carrito.css">
+    <link rel="stylesheet" href="/css/carrito.css">
   </head>
   <body>
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg navbar-dark ">
 
 
-        <a href="/"><img src="img/logo.png" class="logo" alt="La Ola - Hamburguesas Veganas"></a>
+        <a href="/"><img src="/img/logo.png" class="logo" alt="La Ola - Hamburguesas Veganas"></a>
         &nbsp;<h1>LA OLA</h1>
 
 
