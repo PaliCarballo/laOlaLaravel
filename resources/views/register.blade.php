@@ -8,7 +8,7 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="nombre">Nombre y Apellido</label>
-            <input id="nombre" type="text" class="form-control  name="nombre" value="">
+            <input id="nombre" type="text" class="form-control"  name="nombre" value="">
             <div class="invalid-feedback"></div>
           </div>
           <div class="form-group col-md-6">
@@ -29,7 +29,7 @@
             <div class="invalid-feedback"></div>
           </div>
           <div class="col-md-6">
-            <label for="avatar">Foto de perfil</label> 
+            <label for="avatar">Foto de perfil</label>
             <input id="avatar" type="file" name="avatar" value="">
           </div>
           <button type="submit" class="btn btn-outline-light">Enviar :)</button>

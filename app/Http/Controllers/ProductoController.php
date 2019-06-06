@@ -8,13 +8,13 @@ use \App\Product;
 class ProductoController extends Controller
 {
     public function oneProduct($id){
-        
+
       //  $genres = Genre::where('id', '=', $id)->first();
 
         $products = Product::find($id);
         // Hace un where, solo para llave primaria
         dd($products);
-    
+
     }
     public function createProduct() {
         return view('product.create');
@@ -34,7 +34,7 @@ class ProductoController extends Controller
             'name' => 'required|unique:products',
             'description' => 'required',
             'price' => 'required',
-           
+
         ],
         [
             'name.required' => 'El nombre es obligatorio',
