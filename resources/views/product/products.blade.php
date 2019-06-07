@@ -18,7 +18,7 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="img/combo1.jpg" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
+                  <img src="/storage/{{$product->avatar}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
                 </div>
                 <div class="carousel-item">
                   <img src="img/combo2.jpg" class="d-block w-100" alt="...">
@@ -45,7 +45,10 @@
         <br>
         <h6 class="card-text" style="color:black"><small class="text-muted">Precio: $ {{$product->price}}</small></h6>
 
-          <button type="submit" name="product_id" value="{{$product->id}}">Agregar</button>
+          <button type="submit" name="product_id" value="{{$product->id}}">Agregar al carrito</button>
+
+          <a class="btn btn-primary" href="/productos/{{$product->id}}">Ver Mas</a>
+      <a class="btn btn-success" href="/productos/editar/{{$product->id}}">Editar</a>
       </div>
     </div>
   </div>

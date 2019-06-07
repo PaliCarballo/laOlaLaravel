@@ -19,6 +19,8 @@ Route::get('/productos', 'ProductoController@index');
 //para el admin
 Route::get('/productos/agregar', 'ProductoController@createProduct');
 Route::post('/productos', 'ProductoController@save');
+Route::post('/productos/editar/{id}', 'ProductoController@update');
+Route::get('/productos/editar/{id}', 'ProductoController@edit');
 
 Route::get('/productos/{id}', 'ProductoController@oneProduct');
 
