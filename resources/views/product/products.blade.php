@@ -21,7 +21,7 @@
                             </h4>
                         </div>
                     </div>
-                    <img src="img/combo1.jpg" alt="Combo 1 Hamburguesas Veggie">
+                    <img src="/storage/{{$product->avatar}}" alt="Hamburguesa">
                 </article>
                 @endforeach
                 {{-- <article class="producto">

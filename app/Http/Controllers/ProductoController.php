@@ -34,12 +34,13 @@ class ProductoController extends Controller
             'name' => 'required|unique:products',
             'description' => 'required',
             'price' => 'required',
-           
+            'avatar' => 'required|image',
         ],
         [
             'name.required' => 'El nombre es obligatorio',
             'description.required' => 'La descripción es obligatorio',
-            'price.required' => 'El precio es obligatorio'
+            'price.required' => 'El precio es obligatorio',
+            'image' => 'Imagen invalida'
         ]);
 
         //si las validaciones estan bien procedo a guardar
@@ -61,12 +62,26 @@ class ProductoController extends Controller
         $product = new Product([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
-            'price' => $request->input('price'),
-            'avatar' => 'imagen.jpg',
+            'price' => $request->input('price')
         ]);
-        $product->save();
 
+          //al archivo que subi lo voy a guardar en el filesystem de laravel
+          $rutaDelArchivo = $request->file('avatar')->store('public');
+          //le saco solo el nombre
+          $nombreArchivo = basename($rutaDelArchivo);
+          //guardo el nombre del archivo en el campo poster
+          $product->avatar = $nombreArchivo;
+        
+
+
+        $product->save();
         return redirect('/productos');
+    
+        
+    
+    
+    
+    
     }
 
 }

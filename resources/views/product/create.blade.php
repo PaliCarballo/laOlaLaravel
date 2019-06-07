@@ -33,7 +33,8 @@
 
     <div class="form-group">
         <label for="avatar">Subir imagen:</label>
-        <input type="file" id="avatar">
+        <img src="/storage/{{$product->avatar}}" alt="Hamburguesa">
+        <input type="file" id="avatar" name="avatar">
         
     </div> <br>
     
