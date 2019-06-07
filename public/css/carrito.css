@@ -4,7 +4,7 @@ div.productos {
   flex-direction: column;
   flex-flow: wrap;
   justify-content: space-around;
-  padding: 5%;
+  padding: 1%;
   background-color: #EAECEE;
   flex-wrap: wrap;
 
@@ -14,13 +14,14 @@ div.productos {
 div.cardp {
   margin: 0;
   width: 100%;
-  padding: 2%;
+  padding: 1%;
   background-color: black;
-  margin-bottom: 30%;
+  margin-bottom: 1%;
 
 
 
 }
+
 
 img {
   width: 259px;
@@ -34,7 +35,7 @@ div.cardp a {
 
 @media (min-width:768px) {
   div.cardp {
-    width: 50%;
+    width: 49%;
 }
 }
 
