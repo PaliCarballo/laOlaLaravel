@@ -3,6 +3,11 @@
 @section('contenido')
 
 
+<div class="container">
+
+
+
+
         <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
 @csrf
 
@@ -25,6 +30,12 @@
                 </div>
                 <div class="carousel-item">
                   <img src="/storage/{{$product->avatar2}}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="/storage/{{$product->avatar3}}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="/storage/{{$product->avatar4}}" class="d-block w-100" alt="...">
                 </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -56,9 +67,11 @@
 
 </div>
       @endforeach
+
 </form>
 
-
+</div>
+<p>   {{$products->links()}} </p>  
 
 
 

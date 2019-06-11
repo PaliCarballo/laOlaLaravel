@@ -21,8 +21,8 @@ class ProductoController extends Controller
     }
 
     public function index(){
-        $products = Product::all();
-
+        $products = Product::paginate(2);
+        $cantidad = ceil($products->count() / 2);
         //return view('product.products')->with(['products'=>$products]);
 
         $vars = compact('products');
