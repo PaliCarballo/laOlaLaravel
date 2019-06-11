@@ -19,6 +19,10 @@ class CreateProductsAndCartTable extends Migration
             $table->text('description');
             $table->integer('price')->default(0);
             $table->string('avatar', 200);
+            $table->string('avatar1', 200);
+            $table->string('avatar2', 200);
+            $table->string('avatar3', 200);
+            $table->string('avatar4', 200);
             $table->timestamps();
         });
 
@@ -27,7 +31,7 @@ class CreateProductsAndCartTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
-    
+
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
@@ -42,7 +46,7 @@ class CreateProductsAndCartTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
         Schema::dropIfExists('cart');
+        Schema::dropIfExists('products');
     }
 }

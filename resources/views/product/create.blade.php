@@ -3,7 +3,7 @@
 @section('contenido')
 
 <form action="/productos" method="post" enctype="multipart/form-data">
-    
+
     @csrf
 
     <div class="form-group">
@@ -33,11 +33,35 @@
 
     <div class="form-group">
         <label for="avatar">Subir imagen:</label>
-        
+
         <input type="file" id="avatar" name="avatar">
-        
+
     </div> <br>
-    
+    <div class="form-group">
+        <label for="avatar1">Subir imagen:</label>
+
+        <input type="file" id="avatar1" name="avatar1">
+
+    </div> <br>
+    <div class="form-group">
+        <label for="avatar2">Subir imagen:</label>
+
+        <input type="file" id="avatar2" name="avatar2">
+
+    </div> <br>
+    <div class="form-group">
+        <label for="avatar3">Subir imagen:</label>
+
+        <input type="file" id="avatar3" name="avatar3">
+
+    </div> <br>
+    <div class="form-group">
+        <label for="avatar4">Subir imagen:</label>
+
+        <input type="file" id="avatar4" name="avatar4">
+
+    </div> <br>
+
     <button type="submit" class="btn btn-primary">Agregar Producto</button>
   </form>
 

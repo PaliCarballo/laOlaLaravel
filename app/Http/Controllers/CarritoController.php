@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Cart;
 use \App\User;
-
+use Illuminate\Support\Facades\Auth;
 class CarritoController extends Controller
 {
   public function index(){
@@ -14,7 +14,7 @@ class CarritoController extends Controller
   }
   public function agregarAlCarrito( Request $request){
 
-    $user = User::find(1);
+    $user =Auth::user();
 
     $user->carrito()->attach($request->product_id,['quantity'=>1]);
 

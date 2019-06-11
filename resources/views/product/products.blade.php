@@ -3,7 +3,7 @@
 @section('contenido')
 
 
-        <form class="" action="/productos/agregarCarrito" method="post">
+        <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
 @csrf
 
   @foreach($products as $product)
@@ -21,10 +21,10 @@
                   <img src="/storage/{{$product->avatar}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
                 </div>
                 <div class="carousel-item">
-                  <img src="img/combo2.jpg" class="d-block w-100" alt="...">
+                  <img src="/storage/{{$product->avatar1}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="img/combo3.jpg" class="d-block w-100" alt="...">
+                  <img src="/storage/{{$product->avatar2}}" class="d-block w-100" alt="...">
                 </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -49,6 +49,7 @@
 
           <a class="btn btn-primary" href="/productos/{{$product->id}}">Ver Mas</a>
       <a class="btn btn-success" href="/productos/editar/{{$product->id}}">Editar</a>
+      <a class="btn btn-warning" href="/productos/agregar">Agregar <br> Producto</a>
       </div>
     </div>
   </div>

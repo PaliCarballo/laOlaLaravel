@@ -38,7 +38,7 @@ class ProductoController extends Controller
     }
     public function update($id, Request $request)
     {
-      
+
       $this->validate($request, [
         'name' => 'required|unique:products',
         'description' => 'required',
@@ -51,9 +51,9 @@ class ProductoController extends Controller
         'price.required' => 'El precio es obligatorio',
         'image' => 'avatarImagen invalida'
     ]);
-        
+
         //me traigo a la pelicula usando el find
-        $productoAEditar = Movie::find($id);
+        $productoAEditar = Product::find($id);
         //le cambio los atributos o valores al objeto que me traje arriba
         $productoAEditar->name = $request->name;
         $productoAEditar->description = $request->description;
@@ -69,8 +69,43 @@ class ProductoController extends Controller
           $productoAEditar->avatar = $nombreArchivo;
         }
 
+
+
+        if($request->file('avatar1')){
+          //al archivo que subi lo voy a guardar en el filesystem de laravel
+          $rutaDelArchivo = $request->file('avatar1')->store('public');
+          //le saco solo el nombre
+          $nombreArchivo = basename($rutaDelArchivo);
+          //guardo el nombre del archivo en el campo poster
+          $productoAEditar->avatar1 = $nombreArchivo;
+        }
+        if($request->file('avatar2')){
+          //al archivo que subi lo voy a guardar en el filesystem de laravel
+          $rutaDelArchivo = $request->file('avatar2')->store('public');
+          //le saco solo el nombre
+          $nombreArchivo = basename($rutaDelArchivo);
+          //guardo el nombre del archivo en el campo poster
+          $productoAEditar->avatar2 = $nombreArchivo;
+        }
+        if($request->file('avatar3')){
+          //al archivo que subi lo voy a guardar en el filesystem de laravel
+          $rutaDelArchivo = $request->file('avatar3')->store('public');
+          //le saco solo el nombre
+          $nombreArchivo = basename($rutaDelArchivo);
+          //guardo el nombre del archivo en el campo poster
+          $productoAEditar->avatar3 = $nombreArchivo;
+        }
+
+        if($request->file('avatar4')){
+          //al archivo que subi lo voy a guardar en el filesystem de laravel
+          $rutaDelArchivo = $request->file('avatar4')->store('public');
+          //le saco solo el nombre
+          $nombreArchivo = basename($rutaDelArchivo);
+          //guardo el nombre del archivo en el campo poster
+          $productoAEditar->avatar4 = $nombreArchivo;
+        }
         //lo mando a guardar
-        $peliculaAEditar->save();
+        $productoAEditar->save();
         return redirect('/productos');
     }
 
@@ -82,6 +117,10 @@ class ProductoController extends Controller
             'description' => 'required',
             'price' => 'required',
             'avatar' => 'required|image',
+            'avatar1' => 'required|image',
+            'avatar2' => 'required|image',
+            'avatar3' => 'required|image',
+            'avatar4' => 'required|image',
         ],
         [
             'name.required' => 'El nombre es obligatorio',
@@ -112,23 +151,53 @@ class ProductoController extends Controller
             'price' => $request->input('price')
         ]);
 
+
+                  //al archivo que subi lo voy a guardar en el filesystem de laravel
+                  $rutaDelArchivo = $request->file('avatar')->store('public');
+                  //le saco solo el nombre
+                  $nombreArchivo = basename($rutaDelArchivo);
+                  //guardo el nombre del archivo en el campo poster
+                  $product->avatar = $nombreArchivo;
+
           //al archivo que subi lo voy a guardar en el filesystem de laravel
-          $rutaDelArchivo = $request->file('avatar')->store('public');
+          $rutaDelArchivo = $request->file('avatar1')->store('public');
           //le saco solo el nombre
           $nombreArchivo = basename($rutaDelArchivo);
           //guardo el nombre del archivo en el campo poster
-          $product->avatar = $nombreArchivo;
-        
+          $product->avatar1 = $nombreArchivo;
+
+          //al archivo que subi lo voy a guardar en el filesystem de laravel
+          $rutaDelArchivo = $request->file('avatar2')->store('public');
+          //le saco solo el nombre
+          $nombreArchivo = basename($rutaDelArchivo);
+          //guardo el nombre del archivo en el campo poster
+          $product->avatar2 = $nombreArchivo;
+
+          //al archivo que subi lo voy a guardar en el filesystem de laravel
+          $rutaDelArchivo = $request->file('avatar3')->store('public');
+          //le saco solo el nombre
+          $nombreArchivo = basename($rutaDelArchivo);
+          //guardo el nombre del archivo en el campo poster
+          $product->avatar3 = $nombreArchivo;
+
+          //al archivo que subi lo voy a guardar en el filesystem de laravel
+          $rutaDelArchivo = $request->file('avatar4')->store('public');
+          //le saco solo el nombre
+          $nombreArchivo = basename($rutaDelArchivo);
+          //guardo el nombre del archivo en el campo poster
+          $product->avatar4 = $nombreArchivo;
+
+
 
 
         $product->save();
         return redirect('/productos');
-    
-        
-    
-    
-    
-    
+
+
+
+
+
+
     }
 
 }

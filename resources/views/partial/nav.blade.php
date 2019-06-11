@@ -19,57 +19,85 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/carrito.css">
+
+
+
   </head>
   <body>
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg navbar-dark ">
 
 
-        <a href="/"><img src="/img/logo.png" class="logo" alt="La Ola - Hamburguesas Veganas"></a>
-        &nbsp;<h1>LA OLA</h1>
+              <a href="/index"><img src="/img/logo.png" class="logo" alt="La Ola - Hamburguesas Veganas"></a>
+              &nbsp;<h1>LA OLA</h1>
 
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+
+
 
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/productos"><ion-icon name="trophy"></ion-icon><br>Productos </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/preguntas"><i class="far fa-question-circle"></i><br>F.A.Q.</a>
-      </li>
 
-      <?php if (empty($_SESSION['email']))
-      { ?>
 
+
+      @guest
       <li class="nav-item active">
         <a class="nav-link" href="/registro"><i class="fas fa-seedling" ></i><br>Registrate</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="/login"><i class="fas fa-user-circle" ></i><br>Login</a>
       </li>
+      @else
+  <li class="nav-item dropdown">
 
-      <li class="nav-item active">
-        <a class="nav-link" href="/productos/agregar"><ion-icon name="done-all"></ion-icon></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/carrito"><ion-icon name="cart"></ion-icon></a>
-      </li>
-      <?php
-      } else
-      { ?>
+              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                  {{ Auth::user()->name }} <span class="caret"></span>
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                  </form>
+              </div>
+          </li>
 
 
 
-      <li>
-        <a class="nav-link" href="micuenta.php"><i class="fas fa-user-circle"></i><br><p><?php echo $_SESSION['email'];?></p><br>Mi Perfil</a>
-      </li>
-      <li><a class="nav-link" href="cerrarSession.php"><i class="fas fa-times-circle"></i></a></li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/productos"><ion-icon name="trophy"></ion-icon><br>Productos </a>
+          </li>
 
-    <?php } ?>
+          <li class="nav-item active">
+            <a class="nav-link" href="/preguntas"><i class="far fa-question-circle"></i><br>F.A.Q.</a>
+          </li>
+
+
+
+
+
+          <li class="nav-item active">
+            <a class="nav-link" href="/productos/agregar"><ion-icon name="done-all"></ion-icon></a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="/carrito"><ion-icon name="cart"></ion-icon></a>
+          </li>
+
+
+
+          @endguest
+
 
     </ul>
   </div>

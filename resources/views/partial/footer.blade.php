@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-lg-4">
-                    <h1><a href="index.php"> <img src="/img/logo-footer.svg" class="logo-footer"> <br>LA OLA </a></h1>
+                    <h1><a href="/index"> <img src="/img/logo-footer.svg" class="logo-footer"> <br>LA OLA </a></h1>
                 </div>
                 <div class="col-sm-3 col-lg-2">
                     <h5>Destacados</h5>
