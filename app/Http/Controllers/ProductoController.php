@@ -43,13 +43,15 @@ class ProductoController extends Controller
         'name' => 'required|unique:products',
         'description' => 'required',
         'price' => 'required',
+        'quantity' => 'required',
         'avatar' => 'required|image',
     ],
     [
         'name.required' => 'El nombre es obligatorio',
         'description.required' => 'La descripción es obligatorio',
         'price.required' => 'El precio es obligatorio',
-        'image' => 'avatarImagen invalida'
+        'quantity.required' => 'Ingrese cantidad deseada',
+        'image' => 'avatarImagen invalida',
     ]);
 
         //me traigo a la pelicula usando el find
@@ -58,6 +60,7 @@ class ProductoController extends Controller
         $productoAEditar->name = $request->name;
         $productoAEditar->description = $request->description;
         $productoAEditar->price = $request->price;
+        $productoAEditar->quantity = $request->quantity;
 
         //si subo un archivo lo guardo
         if($request->file('avatar')){
@@ -116,6 +119,7 @@ class ProductoController extends Controller
             'name' => 'required|unique:products',
             'description' => 'required',
             'price' => 'required',
+            'quantity' => 'required',
             'avatar' => 'required|image',
             'avatar1' => 'required|image',
             'avatar2' => 'required|image',
@@ -126,7 +130,8 @@ class ProductoController extends Controller
             'name.required' => 'El nombre es obligatorio',
             'description.required' => 'La descripción es obligatorio',
             'price.required' => 'El precio es obligatorio',
-            'image' => 'Imagen invalida'
+            'quantity.required' => 'Ingrese cantidad deseada',
+            'image' => 'Imagen invalida',
         ]);
 
         //si las validaciones estan bien procedo a guardar
@@ -148,7 +153,8 @@ class ProductoController extends Controller
         $product = new Product([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
-            'price' => $request->input('price')
+            'price' => $request->input('price'),
+            'quantity' => $request->input('quantity'),
         ]);
 
 

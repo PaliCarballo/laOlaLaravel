@@ -31,6 +31,7 @@
         @enderror
     </div>
 
+
     <div class="form-group">
         <label for="avatar">Subir imagen:</label>
 

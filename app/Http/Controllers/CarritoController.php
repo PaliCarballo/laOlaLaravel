@@ -18,6 +18,17 @@ class CarritoController extends Controller
 
     $user->carrito()->attach($request->product_id,['quantity'=>1]);
 
-    return redirect('/productos');
+    return redirect('/carrito');
+  }
+
+  public function miCarrito(){
+    $user =Auth::user();
+
+    $datalles=$user->carrito;
+    return view('cart.carrito')
+      ->with([
+        'detalles' => $datalles
+      ]);
+
   }
 }

@@ -55,12 +55,19 @@
         <h6 class="card-text" style="color:black">Ingredientes:<br> {{$product->description}}</h6>
         <br>
         <h6 class="card-text" style="color:black"><small class="text-muted">Precio: $ {{$product->price}}</small></h6>
+        <br>
+
 
           <button type="submit" name="product_id" value="{{$product->id}}">Agregar al carrito</button>
 
+
+
+@if(Auth::user()->admin)
           <a class="btn btn-primary" href="/productos/{{$product->id}}">Ver Mas</a>
       <a class="btn btn-success" href="/productos/editar/{{$product->id}}">Editar</a>
       <a class="btn btn-warning" href="/productos/agregar">Agregar <br> Producto</a>
+
+@endif
       </div>
     </div>
   </div>
@@ -71,7 +78,7 @@
 </form>
 
 </div>
-<p>   {{$products->links()}} </p>  
+<p>   {{$products->links()}} </p>
 
 
 
