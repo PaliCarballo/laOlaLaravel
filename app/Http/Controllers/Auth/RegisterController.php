@@ -50,6 +50,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -61,12 +62,24 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-    }
+     protected function create(array $data)
+     {
+
+       //dd($data);
+       $nombreArchivo = 'user_default.jpg';
+       //debemos tener en cuenta que si hay un archivo, lo subimos y le guardamos la ruta
+       if(isset($data['foto'])){
+         //al archivo que subi lo voy a guardar en el filesystem de laravel
+         $rutaDelArchivo = $data['foto']->store('public');
+         //le saco solo el nombre
+         $nombreArchivo = basename($rutaDelArchivo);
+       }
+         return User::create([
+             'name' => $data['name'],
+             'lastname' => $data['lastname'],
+             'email' => $data['email'],
+             'password' => Hash::make($data['password']),
+             'foto' => $nombreArchivo,
+         ]);
+     }
 }

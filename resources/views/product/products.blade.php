@@ -3,29 +3,87 @@
 @section('contenido')
 
 
-               
-      
+<div class="container">
 
-<section id="productosDestacados">
-        <div class="titulo-productos">
-          <h3>Nuestros Productos</h3>
-          <hr>
-        </div>
-            <div class="container-productos">
-                @foreach($products as $product)
-                <article class="producto">
-                    <div class="producto-hover">
-                        <div class="producto-hover-content">
-                            <ion-icon name="heart"></ion-icon> <h4>
-                            <a href='/productos/{{$product->id}}'>{{$product->name}}</a>
-                            </h4>
-                        </div>
-                    </div>
-                    <img src="img/combo1.jpg" alt="Combo 1 Hamburguesas Veggie">
-                </article>
-                @endforeach
-                {{-- <article class="producto">
-                    <div class="producto-hover">
+
+
+
+        <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
+@csrf
+
+  @foreach($products as $product)
+        <div class="card mb-3" style="max-width: 640px;">
+  <div class="row no-gutters">
+
+    <h2 style="color:black">4 Hamburguesas Veganas Congeladas</h2>
+
+    <div class="col-md-4">
+
+
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/storage/{{$product->avatar}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
+                </div>
+                <div class="carousel-item">
+                  <img src="/storage/{{$product->avatar1}}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="/storage/{{$product->avatar2}}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="/storage/{{$product->avatar3}}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="/storage/{{$product->avatar4}}" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><a href='/productos/{{$product->id}}'>{{$product->name}}</a></h5>
+        <h6 class="card-text" style="color:black">Ingredientes:<br> {{$product->description}}</h6>
+        <br>
+        <h6 class="card-text" style="color:black"><small class="text-muted">Precio: $ {{$product->price}}</small></h6>
+        <br>
+
+
+          <button type="submit" name="product_id" value="{{$product->id}}">Agregar al carrito</button>
+
+
+
+@if(Auth::user()->admin)
+          <a class="btn btn-primary" href="/productos/{{$product->id}}">Ver Mas</a>
+      <a class="btn btn-success" href="/productos/editar/{{$product->id}}">Editar</a>
+      <a class="btn btn-warning" href="/productos/agregar">Agregar <br> Producto</a>
+
+@endif
+      </div>
+    </div>
+  </div>
+
+</div>
+      @endforeach
+
+</form>
+
+</div>
+<p>   {{$products->links()}} </p>
+
+
+
+        <!-- <article class="producto">
+                     <div class="producto-hover">
                         <div class="producto-hover-content">
                             <ion-icon name="heart"></ion-icon> <h4>Combo 2</h4>
                         </div>
@@ -63,10 +121,10 @@
                         </div>
                     </div>
                     <img src="img/combo6.jpg" alt="Combo 6 Hamburguesas Veggie">
-                </article> --}}
+                </article>
             </div>
-      </section>
+      </section>-->
 
-      
+
 
 @endsection
