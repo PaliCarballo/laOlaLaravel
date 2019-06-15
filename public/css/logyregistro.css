@@ -5,20 +5,17 @@
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  font-family: 'Fjalla One', sans-serif;
   justify-content: center;
-  color: white;
   height: 100%;
   text-align: center;
   padding: 5%;
 }
-.log h2{
+.log h2, .log h4{
   color: black;
+  margin-bottom: 0;
+  font-family: 'Fjalla One', sans-serif;
 }
-form{
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 5%;
-}
+
 .form-group {
   display: inline;
 }
