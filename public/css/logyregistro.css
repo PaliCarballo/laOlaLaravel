@@ -9,6 +9,7 @@
   height: 100%;
   text-align: center;
   padding: 5%;
+  
 }
 .log h2, .log h4{
   color: black;
@@ -44,4 +45,8 @@ form.btn btn-outline-light {
 }
 .invalid-feedback {
   margin-top: -17px;
+}
+
+div.col-md-8 {
+  margin: 0;
 }
