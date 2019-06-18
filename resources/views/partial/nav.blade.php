@@ -28,7 +28,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark ">
 
 
-              <a href="/index"><img src="/img/logo.png" class="logo" alt="La Ola - Hamburguesas Veganas"></a>
+              <a href="/"><img src="/img/logo.png" class="logo" alt="La Ola - Hamburguesas Veganas"></a>
               <h1>LA OLA</h1>
 
 

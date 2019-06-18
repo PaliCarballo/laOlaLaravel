@@ -1,6 +1,25 @@
-.log {
+.reg {
   background-color: black;
   background-image: url("../img/fondo-form.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 5%;
+}
+.reg h2, .reg h4{
+  color: black;
+  margin-bottom: 0;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+
+.log {
+  background-color: black;
+  background-image: url("../img/fondo-banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -18,6 +37,7 @@
 
 .form-group {
   display: inline;
+  font-family: 'Quicksand', sans-serif;
 }
 input {
 	margin-bottom: 25px;
