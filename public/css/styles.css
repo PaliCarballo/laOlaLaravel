@@ -34,6 +34,20 @@ font-family: 'Shadows Into Light', cursive;
   font-family: 'Fjalla One', sans-serif;
   color: white;
 }
+.btn-primary {
+  background-color: #64a19d!important;
+  border: none;
+  text-transform: uppercase;
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 20px;
+  margin-top: 30px;
+}
+.btn-link {
+  color: #64a19d!important;
+}
 
 /* Estilos del Nav */
 .logo {
