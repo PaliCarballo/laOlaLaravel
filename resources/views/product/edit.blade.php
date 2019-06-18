@@ -55,6 +55,29 @@
         @enderror
     </div> <br>
 
+    <input type="file" id="avatar1" name="avatar">
+    @error('avatar1')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+  </div> <br>
+
+  <input type="file" id="avatar2" name="avatar">
+  @error('avatar2')
+      <div class="alert alert-danger">{{ $message }}</div>
+  @enderror
+</div> <br>
+
+<input type="file" id="avatar3" name="avatar">
+@error('avatar3')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
+</div> <br>
+
+<input type="file" id="avatar44" name="avatar">
+@error('avatar4')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
+</div> <br>
     <button type="submit" class="btn btn-primary">Editar</button>
   </form>
 

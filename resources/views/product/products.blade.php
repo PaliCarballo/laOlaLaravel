@@ -7,7 +7,7 @@
 
 
 
-
+<p>   {{$products->links()}} </p>
         <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
 @csrf
 
@@ -62,10 +62,13 @@
 
 
 
-@if(Auth::user()->admin)
           <a class="btn btn-primary" href="/productos/{{$product->id}}">Ver Mas</a>
+
+@if(isset(Auth::user()->admin))
       <a class="btn btn-success" href="/productos/editar/{{$product->id}}">Editar</a>
       <a class="btn btn-warning" href="/productos/agregar">Agregar <br> Producto</a>
+
+
 
 @endif
       </div>
@@ -73,12 +76,20 @@
   </div>
 
 </div>
-      @endforeach
 
 </form>
 
+<form class="" action="/delete" method="post">
+  @csrf
+  <h1> {{$product->name}}</h1>
+  <input type="hidden" name="id" value="{{$product->id}}">
+  <input type="submit" name="" value="Borrar Producto">
+</form>
+
+
+@endforeach
 </div>
-<p>   {{$products->links()}} </p>
+
 
 
 

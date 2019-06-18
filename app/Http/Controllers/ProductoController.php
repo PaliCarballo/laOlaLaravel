@@ -7,13 +7,17 @@ use \App\Product;
 
 class ProductoController extends Controller
 {
-    public function oneProduct($id){
+    public function borrar(Request $request){
 
+        $id = $request ['id'];
       //  $genres = Genre::where('id', '=', $id)->first();
 
         $products = Product::find($id);
         // Hace un where, solo para llave primaria
-        dd($products);
+        $products->delete();
+
+         return redirect('/productos');
+
 
     }
     public function createProduct() {
@@ -43,32 +47,36 @@ class ProductoController extends Controller
         'name' => 'required|unique:products',
         'description' => 'required',
         'price' => 'required',
-        'quantity' => 'required',
+
         'avatar' => 'required|image',
+        'avatar1' => 'required|image',
+        'avatar2' => 'required|image',
+        'avatar3' => 'required|image',
+        'avatar4' => 'required|image',
     ],
     [
         'name.required' => 'El nombre es obligatorio',
         'description.required' => 'La descripción es obligatorio',
         'price.required' => 'El precio es obligatorio',
-        'quantity.required' => 'Ingrese cantidad deseada',
+
         'image' => 'avatarImagen invalida',
     ]);
 
-        //me traigo a la pelicula usando el find
+        //me traigo a la producto usando el find
         $productoAEditar = Product::find($id);
         //le cambio los atributos o valores al objeto que me traje arriba
         $productoAEditar->name = $request->name;
         $productoAEditar->description = $request->description;
         $productoAEditar->price = $request->price;
-        $productoAEditar->quantity = $request->quantity;
 
-        //si subo un archivo lo guardo
+
+        //si subo un archivo, lo guardo.
         if($request->file('avatar')){
           //al archivo que subi lo voy a guardar en el filesystem de laravel
           $rutaDelArchivo = $request->file('avatar')->store('public');
           //le saco solo el nombre
           $nombreArchivo = basename($rutaDelArchivo);
-          //guardo el nombre del archivo en el campo poster
+          //guardo el nombre del archivo en el campo avatar
           $productoAEditar->avatar = $nombreArchivo;
         }
 
@@ -79,7 +87,7 @@ class ProductoController extends Controller
           $rutaDelArchivo = $request->file('avatar1')->store('public');
           //le saco solo el nombre
           $nombreArchivo = basename($rutaDelArchivo);
-          //guardo el nombre del archivo en el campo poster
+          //guardo el nombre del archivo en el campo avatar
           $productoAEditar->avatar1 = $nombreArchivo;
         }
         if($request->file('avatar2')){
@@ -87,7 +95,7 @@ class ProductoController extends Controller
           $rutaDelArchivo = $request->file('avatar2')->store('public');
           //le saco solo el nombre
           $nombreArchivo = basename($rutaDelArchivo);
-          //guardo el nombre del archivo en el campo poster
+          //guardo el nombre del archivo en el campo avatar
           $productoAEditar->avatar2 = $nombreArchivo;
         }
         if($request->file('avatar3')){
@@ -95,7 +103,7 @@ class ProductoController extends Controller
           $rutaDelArchivo = $request->file('avatar3')->store('public');
           //le saco solo el nombre
           $nombreArchivo = basename($rutaDelArchivo);
-          //guardo el nombre del archivo en el campo poster
+          //guardo el nombre del archivo en el campo avatar
           $productoAEditar->avatar3 = $nombreArchivo;
         }
 
@@ -104,7 +112,7 @@ class ProductoController extends Controller
           $rutaDelArchivo = $request->file('avatar4')->store('public');
           //le saco solo el nombre
           $nombreArchivo = basename($rutaDelArchivo);
-          //guardo el nombre del archivo en el campo poster
+          //guardo el nombre del archivo en el campo avatar
           $productoAEditar->avatar4 = $nombreArchivo;
         }
         //lo mando a guardar
@@ -119,7 +127,7 @@ class ProductoController extends Controller
             'name' => 'required|unique:products',
             'description' => 'required',
             'price' => 'required',
-            'quantity' => 'required',
+
             'avatar' => 'required|image',
             'avatar1' => 'required|image',
             'avatar2' => 'required|image',
@@ -130,7 +138,7 @@ class ProductoController extends Controller
             'name.required' => 'El nombre es obligatorio',
             'description.required' => 'La descripción es obligatorio',
             'price.required' => 'El precio es obligatorio',
-            'quantity.required' => 'Ingrese cantidad deseada',
+
             'image' => 'Imagen invalida',
         ]);
 
@@ -154,7 +162,7 @@ class ProductoController extends Controller
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'price' => $request->input('price'),
-            'quantity' => $request->input('quantity'),
+
         ]);
 
 

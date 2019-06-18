@@ -30,7 +30,7 @@ class CreateProductsAndCartTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');
-            $table->integer('quantity');
+            $table->integer('quantity')->nullable();
 
             $table->timestamps();
 

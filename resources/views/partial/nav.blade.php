@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/logyregistro.css">
+    <link rel="stylesheet" href="/css/products.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/carrito.css">
@@ -63,6 +64,7 @@
       <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     <img src="/storage/{{Auth::user()->foto}}" alt="" class="foto">
+                    <br>
                     {{ Auth::user()->name }} <span class="caret"></span>
                 </a>
 

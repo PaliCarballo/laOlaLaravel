@@ -4,7 +4,7 @@
 
 <form action="/productos" method="post" enctype="multipart/form-data">
 
-    @csrf
+  @csrf
 
     <div class="form-group">
       <label for="name">Nombre del Producto:</label>

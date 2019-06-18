@@ -95,8 +95,13 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+
+
                             </div>
                         </div>
+
+                        <button type="button" name="button">loguear con Facebook</button>
+                        <input type="text" name="" value="login/facebook'">
                     </form>
                 </div>
             </div>
