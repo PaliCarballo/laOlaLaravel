@@ -12,6 +12,7 @@ class CarritoController extends Controller
 
       return view('cart.carrito');
   }
+
   public function agregarAlCarrito( Request $request){
 
     $user =Auth::user();
@@ -20,6 +21,7 @@ class CarritoController extends Controller
 
     return redirect('/carrito');
   }
+
 
   public function miCarrito(){
     $user =Auth::user();
@@ -31,4 +33,14 @@ class CarritoController extends Controller
       ]);
 
   }
+
+  public function sacarDelCarrito( Request $request){
+
+    $user =Auth::user();
+
+    $user->carrito()->detach($request->product_id,['quantity'=>1]);
+
+    return redirect('/carrito');
+  }
+  
 }

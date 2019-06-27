@@ -28,7 +28,7 @@
 
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="password" class="col-form-label text-md-left">{{ __('Contraseña') }}</label>  
+                                <label for="password" class="col-form-label text-md-left">{{ __('Contraseña') }}</label>
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                     @error('password')
@@ -68,7 +68,15 @@
                                 @endif
                             </div>
                         </div>
-                      </div>  
+
+                        <div class="col-12">
+
+                            <div class="col-sm-6">
+                                <a href="/login/facebook" class="btn btn-primary">Ingresar con Facebook</a>
+                            </div>
+                        </div>
+
+                      </div>
                     </form>
                 </div>
 

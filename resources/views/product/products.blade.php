@@ -8,6 +8,7 @@
 
 
 <p>   {{$products->links()}} </p>
+
         <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
 @csrf
 
@@ -26,16 +27,16 @@
                   <img src="/storage/{{$product->avatar}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
                 </div>
                 <div class="carousel-item">
-                  <img src="/storage/{{$product->avatar1}}" class="d-block w-100" alt="...">
+                  <img src="/storage/{{$product->avatar1}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
                 </div>
                 <div class="carousel-item">
-                  <img src="/storage/{{$product->avatar2}}" class="d-block w-100" alt="...">
+                  <img src="/storage/{{$product->avatar2}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
                 </div>
                 <div class="carousel-item">
-                  <img src="/storage/{{$product->avatar3}}" class="d-block w-100" alt="...">
+                  <img src="/storage/{{$product->avatar3}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
                 </div>
                 <div class="carousel-item">
-                  <img src="/storage/{{$product->avatar4}}" class="d-block w-100" alt="...">
+                  <img src="/storage/{{$product->avatar4}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
                 </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -61,34 +62,36 @@
           <button type="submit" name="product_id" value="{{$product->id}}">Agregar al carrito</button>
 
 
-
-          <a class="btn btn-primary" href="/productos/{{$product->id}}">Ver Mas</a>
-
 @if(isset(Auth::user()->admin))
       <a class="btn btn-success" href="/productos/editar/{{$product->id}}">Editar</a>
-      <a class="btn btn-warning" href="/productos/agregar">Agregar <br> Producto</a>
 
+      <a class="btn btn-success" href="/productos/delete/{{$product->id}}
+      ">Borrar</a>
 
 
 @endif
       </div>
     </div>
-  </div>
+  </form>
+
+
+
+</div>
+</div>
+
+
+
+  @endforeach
+
+
 
 </div>
 
-</form>
-
-<form class="" action="/delete" method="post">
-  @csrf
-  <h1> {{$product->name}}</h1>
-  <input type="hidden" name="id" value="{{$product->id}}">
-  <input type="submit" name="" value="Borrar Producto">
-</form>
 
 
-@endforeach
-</div>
+
+
+
 
 
 
