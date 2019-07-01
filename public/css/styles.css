@@ -34,6 +34,20 @@ font-family: 'Shadows Into Light', cursive;
   font-family: 'Fjalla One', sans-serif;
   color: white;
 }
+.btn-primary {
+  background-color: #64a19d!important;
+  border: none;
+  text-transform: uppercase;
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 20px;
+  margin-top: 30px;
+}
+.btn-link {
+  color: #64a19d!important;
+}
 
 /* Estilos del Nav */
 .logo {
@@ -104,6 +118,26 @@ nav ul li a p {
 .navbar-dark .navbar-nav .nav-link {
   color: #64a19d;
 }
+
+img.foto{
+  border-radius: 50%;
+  width: 50px;
+  height: 40px;
+}
+.dropdown-menu{
+background-color: black;
+
+  min-width: 5rem;
+  padding: 0.5rem;
+}
+.dropdown-item{
+  color: white;
+
+}
+.dropdown-menu.show{
+  display: inline;
+}
+
 /* Estilos del footer */
 
 footer {
@@ -244,6 +278,9 @@ footer .btn {
       margin-left:240px;
       margin-right:  00px;
   }
+  nav h1 {
+    padding: 12px 0px 0px 65px;
+  }
 
 }
 @media (min-width:375px){
@@ -261,7 +298,7 @@ footer .btn {
       margin-right:  00px;
   }
   nav h1 {
-    padding: 12px 0px 0 15px;
+    padding: 12px 0px 0 55px;
   }
 }
 @media (min-width:425px){
@@ -278,6 +315,19 @@ footer .btn {
   }
 }
 @media (min-width:768px) {
+  .dropdown-menu{
+  background-color: black;
+
+    min-width: 5rem;
+    padding: 0.5rem;
+  }
+  .dropdown-item{
+    color: white;
+
+  }
+  .dropdown-menu.show{
+    display: inline;
+  }
 .navbar-expand-lg .navbar-collapse {
  display: flex!important;
  flex-basis: auto;

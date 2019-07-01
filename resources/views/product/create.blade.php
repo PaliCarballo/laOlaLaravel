@@ -4,7 +4,7 @@
 
 <form action="/productos" method="post" enctype="multipart/form-data">
 
-    @csrf
+  @csrf
 
     <div class="form-group">
       <label for="name">Nombre del Producto:</label>
@@ -36,31 +36,41 @@
         <label for="avatar">Subir imagen:</label>
 
         <input type="file" id="avatar" name="avatar">
-
+        @error('avatar')
+          <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div> <br>
     <div class="form-group">
         <label for="avatar1">Subir imagen:</label>
 
         <input type="file" id="avatar1" name="avatar1">
-
+        @error('avatar1')
+          <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div> <br>
     <div class="form-group">
         <label for="avatar2">Subir imagen:</label>
 
         <input type="file" id="avatar2" name="avatar2">
-
+        @error('avatar2')
+          <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div> <br>
     <div class="form-group">
         <label for="avatar3">Subir imagen:</label>
 
         <input type="file" id="avatar3" name="avatar3">
-
+        @error('avatar3')
+          <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div> <br>
     <div class="form-group">
         <label for="avatar4">Subir imagen:</label>
 
         <input type="file" id="avatar4" name="avatar4">
-
+        @error('avatar4')
+          <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div> <br>
 
     <button type="submit" class="btn btn-primary">Agregar Producto</button>

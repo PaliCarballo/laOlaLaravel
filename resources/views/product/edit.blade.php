@@ -47,7 +47,7 @@
     </div>
 
     <div class="form-group">
-        <label for="avatar">Cambiar imagen:</label>
+        <label for="avatar">Cambiar imagen 1:</label>
 
         <input type="file" id="avatar" name="avatar">
         @error('avatar')
@@ -55,6 +55,37 @@
         @enderror
     </div> <br>
 
+  <div class="form-group">
+    <label for="avatar1">Cambiar imagen 2:</label>
+    <input type="file" id="avatar1" name="avatar1">
+    @error('avatar1')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+  </div> <br>
+
+  <div class="form-group">
+    <label for="avatar2">Cambiar imagen 3:</label>
+  <input type="file" id="avatar2" name="avatar2">
+  @error('avatar2')
+      <div class="alert alert-danger">{{ $message }}</div>
+  @enderror
+</div> <br>
+
+  <div class="form-group">
+    <label for="avatar3">Cambiar imagen 4:</label>
+<input type="file" id="avatar3" name="avatar3">
+@error('avatar3')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
+</div> <br>
+
+  <div class="form-group">
+    <label for="avatar4">Cambiar imagen 5:</label>
+<input type="file" id="avatar4" name="avatar4">
+@error('avatar4')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
+</div> <br>
     <button type="submit" class="btn btn-primary">Editar</button>
   </form>
 

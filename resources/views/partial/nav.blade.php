@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Ola | Hamburguesas Veggie</title>
 
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '{your-app-id}',
+          cookie     : true,
+          xfbml      : true,
+          version    : '{api-version}'
+        });
+
+        FB.AppEvents.logPageView();
+
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Quicksand:300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
@@ -16,6 +38,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/logyregistro.css">
+    <link rel="stylesheet" href="/css/products.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/carrito.css">
@@ -28,7 +51,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark ">
 
 
-              <a href="/index"><img src="/img/logo.png" class="logo" alt="La Ola - Hamburguesas Veganas"></a>
+              <a href="/"><img src="/img/logo.png" class="logo" alt="La Ola - Hamburguesas Veganas"></a>
               <h1>LA OLA</h1>
 
 
@@ -37,7 +60,16 @@
         </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-    <ul class="navbar-nav mr-auto">
+  <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/"><ion-icon name="trophy"></ion-icon><br>Home </a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="/productos/agregar"><ion-icon name="trophy"></ion-icon><br>Agregar </a>
+      </li>
+
+
       <li class="nav-item active">
         <a class="nav-link" href="/productos"><ion-icon name="trophy"></ion-icon><br>Productos </a>
       </li>
@@ -63,6 +95,7 @@
       <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     <img src="/storage/{{Auth::user()->foto}}" alt="" class="foto">
+                    <br>
                     {{ Auth::user()->name }} <span class="caret"></span>
                 </a>
 
