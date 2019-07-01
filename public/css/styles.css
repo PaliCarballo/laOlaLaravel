@@ -408,3 +408,23 @@ nav ul li a p {
     padding-left: .5rem;
 }
 }
+
+
+  .offset-md-4 {
+    margin: 0;
+  }
+  .text-md-right{
+    text-align: center ! important;
+  }
+
+.row {
+  margin: auto;
+}
+
+form-check {
+  padding: 1rem;
+}
+
+div.col-sm-6{
+  margin: auto;
+}
