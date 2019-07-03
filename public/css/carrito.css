@@ -11,17 +11,22 @@ div.productos {
 
 }
 
-div.cardp {
+form.carrito-form {
   margin: 0;
   width: 100%;
   padding: 1%;
   background-color: black;
-  margin-bottom: 1%;
-
-
 
 }
 
+form.carrito-form.ul {
+  width: 100%;
+}
+
+div.carrito-total {
+  display: flex;
+  justify-content: flex-end;
+}
 
 img {
   width: 259px;

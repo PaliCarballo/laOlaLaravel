@@ -12,6 +12,7 @@ Route::post('/productos/delete/{id}', 'ProductoController@borrar')->middleware([
 
 Route::get('/carrito', 'CarritoController@index')->middleware('auth');
 Route::get('/carrito', 'CarritoController@miCarrito')->middleware('auth');
+//Route::get('/carrito', 'CarritoController@sumarProductos')->middleware('auth');
 
 Route::post('/productos/agregarCarrito', 'CarritoController@agregarAlCarrito');
 
