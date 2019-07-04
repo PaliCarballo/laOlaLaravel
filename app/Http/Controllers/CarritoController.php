@@ -13,7 +13,7 @@ class CarritoController extends Controller
       return view('cart.carrito');
   }
 
-  public function agregarAlCarrito( Request $request){
+  public function agregarAlCarrito(Request $request){
 
     $user =Auth::user();
 
@@ -43,10 +43,7 @@ class CarritoController extends Controller
     return redirect('/carrito');
   }
 
-  public function sumarProductos(){
-    $user =Auth::user();
-    $sum = $user->carrito()->sum($request->product_id,['price'=>1]);
-    }
+
 
 
 }

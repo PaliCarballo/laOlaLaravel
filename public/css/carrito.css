@@ -7,23 +7,33 @@ div.productos {
   padding: 1%;
   background-color: #EAECEE;
   flex-wrap: wrap;
-
-
 }
 
-form.carrito-form {
+
+div.cardp {
   margin: 0;
   width: 100%;
   padding: 1%;
-  background-color: black;
+  background-color: black !important;
 
+}
+button.btn.btn-dark.active {
+    height: 100%;
+    width: 30%;
+}
+
+small.text-muted {
+    font-size: 150%;
+    font-weight: 1000;
+    color: black;
+      font-family: 'Fjalla One', sans-serif;
 }
 
 form.carrito-form.ul {
   width: 100%;
 }
 
-div.carrito-total {
+div.total-carrito {
   display: flex;
   justify-content: flex-end;
 }
