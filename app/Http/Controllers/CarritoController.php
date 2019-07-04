@@ -13,7 +13,7 @@ class CarritoController extends Controller
       return view('cart.carrito');
   }
 
-  public function agregarAlCarrito( Request $request){
+  public function agregarAlCarrito(Request $request){
 
     $user =Auth::user();
 

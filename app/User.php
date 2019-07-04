@@ -46,6 +46,8 @@ class User extends Authenticatable
 
       return $this->belongsToMany(Product::class,'cart');
 
+      return view('/');
+
   }
 
 }

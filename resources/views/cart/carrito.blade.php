@@ -1,32 +1,58 @@
 @extends('layouts.plantilla')
 
 @section('contenido')
+
+<?php
+      $suma = 0;
+      ?>
 @foreach($detalles as $detalle)
-
-
 
 <form class="" action="/carrito/sacarCarrito" method="post">
 @csrf
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="storage/{{$detalle->avatar}}" class="card-img" alt="...">
-    </div>
-    <div class="col-md-4">
-      <div class="card-body">
-        <h5 style='color:black'  class="card-title">{{$detalle->name}}</h5>
-        <p class="card-text"><a href="#">Ver detalle</a></p>
-        <p class="card-text"><small class="text-muted">{{$detalle->price}}</small></p>
 
-        <button type="submit" name="detalle_id" value="{{$detalle->id}}">sacar del carrito</button>
 
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="card-group">
+          <div class="card">
+              <div class="card-body" id="avatar-carrito" style="max">
+              <img src="storage/{{$detalle->avatar}}" class="card-img" alt="..."alt="Max-width 10%">
+            </div>
+          </div>
+          <div class="card" id="prodcuto-nombre" >
+            <div class="card-body">
+              <h5 style='color:black'  class="card-title">{{$detalle->name}}</h5>
+          </div>
+          </div>
+          <div class="card" id="producto-precio">
+            <div class="card-body">
+              <p class="card-text"><small class="text-muted">${{$detalle->price}}</small></p>
+            </div>
+          </div>
+          <div class="card" id="boton-sacarCarrito">
+            <button type="submit" name="detalle_id" class="btn btn-dark active" value="{{$detalle->id}}">sacar del carrito</button>
+          </div>
+        </div>
+
+
 </form>
 
+<?php  $subtotal[]= $detalle->price;
 
+ $suma = array_sum($subtotal);
+
+?>
 
 @endforeach
+
+
+
+
+  <div class="total-carrito"class="card-body text-dark" class="h-50 d-inline-block" class="width:80%;">
+    <ul class="list-group list-group-horizontal">
+
+      <li class="list-group-item"><h5 style='color:black'  class="card-title">Total:</h5></li>
+      <li class="list-group-item" ><strong>${{$suma}}</strong></li>
+    </ul>
+  </div>
+
+
    @endsection
