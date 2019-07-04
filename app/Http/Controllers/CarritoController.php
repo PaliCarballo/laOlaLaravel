@@ -38,12 +38,9 @@ class CarritoController extends Controller
 
     $user =Auth::user();
 
-    $user->carrito()->detach($request->product_id,['quantity'=>1]);
+    $user->carrito()->detach($request->detalle_id,['quantity'=>1]);
 
     return redirect('/carrito');
   }
-
-
-
 
 }

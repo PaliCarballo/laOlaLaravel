@@ -73,16 +73,17 @@
 @endif
       </div>
     </div>
-  </form>
 
 
 
 </div>
 </div>
+@endforeach
+
+</form>
 
 
 
-  @endforeach
 
 
 

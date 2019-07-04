@@ -13,9 +13,9 @@ Route::post('/productos/delete/{id}', 'ProductoController@borrar')->middleware([
 Route::get('/carrito', 'CarritoController@index')->middleware('auth');
 Route::get('/carrito', 'CarritoController@miCarrito')->middleware('auth');
 
-Route::post('/productos/agregarCarrito', 'CarritoController@agregarAlCarrito');
+Route::post('/productos/agregarCarrito', 'CarritoController@agregarAlCarrito')->middleware('auth');
 
-Route::post('/carrito/sacarCarrito', 'CarritoController@sacarDelCarrito');
+Route::post('/carrito/sacarCarrito', 'CarritoController@sacarDelCarrito')->middleware('auth');
 
 Route::get('/', 'PrincipalController@index');
 

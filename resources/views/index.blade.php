@@ -13,7 +13,7 @@
         <p>100% Artesanales & Sin Conservantes</p>
     </div>
     <a href="#sobreNosotros">Conocé más de nosotros</a>
-    <a href="carrito.php">Hacé tu pedido</a>
+    <a href="/productos">Hacé tu pedido</a>
   </div>
 
   <section id="productosDestacados">
