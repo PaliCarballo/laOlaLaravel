@@ -10,8 +10,8 @@ class ProductoController extends Controller
 
     public function index()
   {
-        $products = Product::paginate(4);
-        $cantidad = ceil($products->count() / 4);
+        $products = Product::paginate(3);
+        $cantidad = ceil($products->count() / 3);
         $vars = compact('products');
         return view('product.products', $vars);
   }

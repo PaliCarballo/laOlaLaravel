@@ -60,8 +60,6 @@ class LoginController extends Controller
     {
         $user = Socialite::driver('facebook')->user();
 
-  //  if(Auth::user()->email != $user['email']){
-
 
         $usuario = User::create([
 
@@ -74,7 +72,8 @@ class LoginController extends Controller
           Auth::login($usuario);
           return  redirect('/');
 
-      }
+      //}
 
-    //
+    }
       }
+// }
