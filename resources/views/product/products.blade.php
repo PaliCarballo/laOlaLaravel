@@ -59,7 +59,8 @@
         <br>
 
 
-          <button type="submit" name="product_id" value="{{$product->id}}">Agregar al carrito</button>
+          <button type="submit" class="btn-btn-dark.active"  name="product_id" value="{{$product->id}}">Agregar al carrito</button>
+
 
 
 @if(isset(Auth::user()->admin))
