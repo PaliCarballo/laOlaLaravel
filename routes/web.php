@@ -18,6 +18,7 @@ Route::post('/productos/agregarCarrito', 'CarritoController@agregarAlCarrito')->
 Route::post('/carrito/sacarCarrito', 'CarritoController@sacarDelCarrito')->middleware('auth');
 
 Route::get('/', 'PrincipalController@index');
+Route::get('/', 'PrincipalController@productosDestacados');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
