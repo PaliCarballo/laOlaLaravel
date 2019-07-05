@@ -7,8 +7,13 @@ div.productos {
   padding: 1%;
   background-color: #EAECEE;
   flex-wrap: wrap;
+  max-width: 700px;
+  margin: 20px auto 50px;
 }
-
+.productos h2 {
+  color: #000;
+  padding: 30px 0;
+}
 
 div.cardp {
   margin: 0;
@@ -18,8 +23,7 @@ div.cardp {
 
 }
 button.btn.btn-dark.active {
-    height: 100%;
-    width: 30%;
+   margin-top: 50%;
 }
 
 small.text-muted {
@@ -60,4 +64,9 @@ div.cardp a {
 
   }
 
+}
+
+/* Agregar producto */
+.card {
+  margin: 20px auto;
 }
