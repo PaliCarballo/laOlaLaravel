@@ -29,11 +29,14 @@
           <h2>¿Seguro quiere borrar este producto?</h2>
           <h3 style="text-transform:uppercase; color:black;"> {{$products->name}}</h3>
           <div class="card">
-                        <img style= 'width:200px 'src="/storage/{{$products->avatar}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
+                        <img style= 'width:200px; height:200px 'src="/storage/{{$products->avatar}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
           </div>
           <br>
           <input type="hidden" name="id" value="{{$products->id}}">
           <input type="submit" class="btn btn-danger" name="" value="Borrar Producto">
+
+          <button class="btn btn-success" style="margin-top: -25px;" href="/productos">Volver</button>
+
         </form>
     
     </div>

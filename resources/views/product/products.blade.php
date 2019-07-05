@@ -58,16 +58,13 @@
         <br>
 
 
-          <button type="submit" class="btn btn-info"  name="product_id" value="{{$product->id}}">Agregar al carrito</button>
+          <button type="submit" class="btn btn-warning"  name="product_id" value="{{$product->id}}">Agregar al carrito</button>
 
 
 
 @if(isset(Auth::user()->admin))
       <a class="btn btn-success" href="/productos/editar/{{$product->id}}">Editar</a>
-
-      <a class="btn btn-success" href="/productos/delete/{{$product->id}}
-      ">Borrar</a>
-
+      <a class="btn btn-success" href="/productos/delete/{{$product->id}}" >Borrar</a>
 
 @endif
       </div>
@@ -80,6 +77,8 @@
 @endforeach
 
 </form>
+
+
 
 
 
