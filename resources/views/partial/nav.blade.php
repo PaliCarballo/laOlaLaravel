@@ -62,31 +62,31 @@
 
   <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/"><ion-icon name="trophy"></ion-icon><br>Home </a>
+        <a class="nav-link" href="/"><i class="fas fa-home"></i></ion-icon><br>Home </a>
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link" href="/productos/agregar"><ion-icon name="trophy"></ion-icon><br>Agregar </a>
+        <a class="nav-link" href="/productos/agregar"><i class="fas fa-plus"></i></i></ion-icon><br>Agregar </a>
       </li>
 
 
       <li class="nav-item active">
-        <a class="nav-link" href="/productos"><ion-icon name="trophy"></ion-icon><br>Productos </a>
+        <a class="nav-link" href="/productos"><i class="fas fa-hamburger"></i></ion-icon><br>Productos </a>
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link" href="/preguntas"><i class="far fa-question-circle"></i><br>F.A.Q.</a>
+        <a class="nav-link" href="/preguntas"><i class="fas fa-question"></i></i></i><br>F.A.Q.</a>
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link" href="/carrito"><ion-icon name="cart"></ion-icon>
+        <a class="nav-link" href="/carrito"><i class="fas fa-shopping-cart"></i></ion-icon>
           <br> Carrito</a>
       </li>
 
 
       @guest
       <li class="nav-item active">
-        <a class="nav-link" href="/register"><i class="fas fa-seedling" ></i><br>Registrate</a>
+        <a class="nav-link" href="/register"><i class="fas fa-pencil-alt"></i></i><br>Registrate</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="/login"><i class="fas fa-user-circle" ></i><br>Login</a>
