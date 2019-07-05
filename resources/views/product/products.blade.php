@@ -63,6 +63,7 @@
 
 
 @if(isset(Auth::user()->admin))
+
       <a class="btn btn-success" href="/productos/editar/{{$product->id}}">Editar</a>
 
       <a class="btn btn-success" href="/productos/delete/{{$product->id}}
