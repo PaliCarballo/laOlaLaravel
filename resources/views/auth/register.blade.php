@@ -95,6 +95,12 @@
 
                             </div>
                         </div>
+                        <div class="col-12">
+
+                            <div class="col-sm-6">
+                                <a href="/login/facebook" class="btn btn-primary">Ingresar con Facebook</a>
+                            </div>
+                        </div>
                       </div>
                     </form>
                 </div>
