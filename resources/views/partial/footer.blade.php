@@ -3,14 +3,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-lg-4">
-                    <h1><a href="/index"> <img src="/img/logo-footer.svg" class="logo-footer"> <br>LA OLA </a></h1>
+                    <h1><a href="/"> <img src="/img/logo-footer.svg" class="logo-footer"> <br>LA OLA </a></h1>
                 </div>
                 <div class="col-sm-3 col-lg-2">
                     <h5>Destacados</h5>
                     <ul>
-                        <li><a href="carrito.php">H. de Garbanzos</a></li>
-                        <li><a href="carrito.php">Combo lentejas</a></li>
-                        <li><a href="carrito.php">H. de Zapallo</a></li>
+                        <li><a href="/productos">Hamburguesas de Falafel</a></li>
+                        <li><a href="/productos">Hamburguesas de Lenteja</a></li>
+                        <li><a href="/productos">Hamburguesas de Quinoa</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3 col-lg-2">

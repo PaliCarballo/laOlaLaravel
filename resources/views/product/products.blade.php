@@ -6,9 +6,6 @@
 <div class="container">
 
 
-
-<p>   {{$products->links()}} </p>
-
         <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
 @csrf
 
@@ -82,6 +79,7 @@
 
 </form>
 
+   {{$products->links()}} 
 
 
 

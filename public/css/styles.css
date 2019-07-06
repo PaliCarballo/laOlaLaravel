@@ -137,6 +137,12 @@ background-color: black;
 .dropdown-menu.show{
   display: inline;
 }
+.pagination{
+  display: flex;
+flex-direction:row-reverse;
+list-style: none;
+border-radius: .25rem;
+}
 
 /* Estilos del footer */
 
