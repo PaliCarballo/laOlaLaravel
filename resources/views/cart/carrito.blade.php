@@ -5,6 +5,7 @@
     <?php
           $suma = 0;
           ?>
+    @foreach($detalles as $detalle)
 
     <form class="" action="/carrito/sacarCarrito" method="post">
     @csrf
@@ -13,7 +14,6 @@
 <a class="btn btn-success" href="/productos
 ">Seguir Comprando</a>
 <br>
-@foreach($detalles as $detalle)
             <div class="card-group">
               <div class="card">
                   <div class="card-body" id="avatar-carrito" style="max">
@@ -49,7 +49,7 @@
 
 
 
-  <div class="total-carrito"class="card-body text-dark" class="h-50 d-inline-block" >
+  <div class="total-carrito"class="card-body text-dark" class="h-50 d-inline-block" class="width:80%;">
     <ul class="list-group list-group-horizontal">
 
       <li class="list-group-item"><h5 style='color:black'  class="card-title">Total:</h5></li>
