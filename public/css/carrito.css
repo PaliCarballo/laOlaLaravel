@@ -7,8 +7,13 @@ div.productos {
   padding: 1%;
   background-color: #EAECEE;
   flex-wrap: wrap;
+  max-width: 700px;
+  margin: 20px auto 50px;
 }
-
+.productos h2 {
+  color: #000;
+  padding: 30px 0;
+}
 
 div.cardp {
   margin: 0;
@@ -18,8 +23,7 @@ div.cardp {
 
 }
 button.btn.btn-dark.active {
-    height: 100%;
-    width: 30%;
+   margin-top: 50%;
 }
 
 small.text-muted {
@@ -48,10 +52,13 @@ div.cardp a {
   transition:0.2s background-color;
 }
 
+<<<<<<< HEAD
 img.card-img {
   width: 30%;
   height: 30%;
 }
+=======
+>>>>>>> 9f9f31fb20a2d9ae89d6d24d93a3eab217be7851
 
 @media (min-width:768px) {
   div.cardp {
@@ -66,3 +73,27 @@ img.card-img {
   }
 
 }
+@media (min-width:425px ) {
+  button.btn.btn-dark.active {
+      margin-top: 0;
+  }
+
+  }
+  @media (min-width:375px ) {
+    button.btn.btn-dark.active {
+        margin-top: 0;
+    }
+
+    }
+    @media (min-width:320px ) {
+      button.btn.btn-dark.active {
+          margin-top: 0;
+      }
+
+      }
+
+/* Agregar producto */
+.card {
+  margin: 20px auto;
+}
+/* celu*/

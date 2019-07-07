@@ -29,7 +29,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="password" class="col-form-label text-md-left">{{ __('Contraseña') }}</label>
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="current-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="current-password">
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -38,12 +38,11 @@
                                     @enderror
                             </div>
                         </div>
-
-                        <div class="col-12">
+                       
+                        <div class="col-12 mt-4">
                             <div class="form-group">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
                                     <label class="form-check-label" for="remember">
                                         {{ __('Recordarme') }}
                                     </label>
@@ -51,9 +50,9 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row ">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-dark">
+                                <button type="submit" class="btn btn-primary">
                                     {{ __('Loguearse') }}
                                 </button>
                             </div>
@@ -72,7 +71,7 @@
                         <div class="col-12">
 
                             <div class="col-sm-6">
-                                <a href="/login/facebook" class="btn btn-primary">Ingresar con Facebook</a>
+                                <a href="/login/facebook" class="btn btn-info">Ingresar con Facebook</a>
                             </div>
                         </div>
 

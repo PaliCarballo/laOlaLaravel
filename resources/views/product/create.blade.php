@@ -2,6 +2,10 @@
 
 @section('contenido')
 
+<div class="container productos">
+
+  <h2>Agregá un nuevo producto</h2>
+
 <form action="/productos" method="post" enctype="multipart/form-data">
 
   @csrf
@@ -76,7 +80,7 @@
     <button type="submit" class="btn btn-primary">Agregar Producto</button>
   </form>
 
-
+</div>
 
 
 
