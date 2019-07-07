@@ -48,6 +48,11 @@ div.cardp a {
   transition:0.2s background-color;
 }
 
+img.card-img {
+  width: 30%;
+  height: 30%;
+}
+
 @media (min-width:768px) {
   div.cardp {
     width: 49%;
