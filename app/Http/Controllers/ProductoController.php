@@ -209,4 +209,14 @@ class ProductoController extends Controller
           $productoAEditar->save();
           return redirect('/productos');
         }
+
+
+        /*public function buscar(Request $request)
+          {
+            $id = $request->input('prodName');
+            $prodBuscar = Product::find($id);
+            return view('/productos');
+
+          }*/
+
 }
