@@ -1,11 +1,17 @@
 @extends('layouts.plantilla')
 
 @section('contenido')
+<form class="" action="/productos/buscar" method="get">
+  <div class="input-group mb-3">
+  <input type="text" name="name" class="form-control" >
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+  </div>
+</div>
+ </form>
 
-           <form class="" action="/productos/buscar" method="get">
-               <input type="text" name="name" value="" class="form-control">
-               <button type="submit" class="btn btn-primary">Buscar</button>
-             </form>
+              
+
 
             @if (session('mensaje'))
                <div class="alert alert-success">
