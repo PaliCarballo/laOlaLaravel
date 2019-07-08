@@ -6,6 +6,8 @@
 <div class="container">
 
 
+
+
         <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
 @csrf
 
@@ -65,6 +67,7 @@
       <a class="btn btn-success" href="/productos/delete/{{$product->id}}" >Borrar</a>
 
 @endif
+
       </div>
     </div>
 
@@ -76,7 +79,7 @@
 
 </form>
 
-   {{$products->links()}} 
+   {{$products->links()}}
 
 
 
