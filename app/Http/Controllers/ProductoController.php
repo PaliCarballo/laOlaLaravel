@@ -199,12 +199,14 @@ class ProductoController extends Controller
         }
 
 
-        /*public function buscar(Request $request)
+        public function buscar(Request $request)
           {
-            $id = $request->input('prodName');
-            $prodBuscar = Product::find($id);
-            return view('/productos');
 
-          }*/
+            if ('prodName'!=null) {
+              $prodBuscado = $request->input('prodName');
+              $prodNombre = Product::where('name' == $prodBuscado)->get();
+              return $prodNombre;
+              }
+          }
 
 }
