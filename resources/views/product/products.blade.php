@@ -2,7 +2,7 @@
 
 @section('contenido')
 
-
+<form class="" action="/productos" method="get">
 <div class="container">
 
   <!-- <div class="input-group mb-3">
@@ -11,6 +11,7 @@
     <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
   </div>
 </div> -->
+
 
 
 
@@ -78,7 +79,6 @@
 
       </div>
     </div>
-
 
 
 </div>
