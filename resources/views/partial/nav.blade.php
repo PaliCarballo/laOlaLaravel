@@ -64,6 +64,9 @@
       <li class="nav-item active">
         <a class="nav-link" href="/"><i class="fas fa-home"></i></ion-icon><br>Home </a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/productos/buscar"><ion-icon name="search"></ion-icon><br>Buscador</a>
+      </li>
 @if(isset(Auth::user()->admin))
       <li class="nav-item active">
         <a class="nav-link" href="/productos/agregar"><i class="fas fa-plus"></i></i></ion-icon><br>Agregar </a>

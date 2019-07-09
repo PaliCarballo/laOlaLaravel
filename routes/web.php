@@ -1,6 +1,10 @@
 <?php
 Route::get('/productos', 'ProductoController@index');
+<<<<<<< HEAD
 Route::get('/productos','ProductoController@buscar');
+=======
+Route::get('/productos/buscar', 'ProductoController@buscar');
+>>>>>>> 835ad8720ed424b017b9c8d53188b629e00c573c
 //para el admin
 Route::get('/productos/agregar', 'ProductoController@createProduct')->middleware(['auth', 'admin']);
 Route::post('/productos', 'ProductoController@save')->middleware(['auth', 'admin']);
