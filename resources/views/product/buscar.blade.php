@@ -10,7 +10,8 @@
 </div>
  </form>
 
-              
+               <!-- <input type="text" name="name" value="" class="form-control">
+               <button type="submit" class="btn btn-primary">Buscar</button> -->
 
 
             @if (session('mensaje'))

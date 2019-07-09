@@ -8,20 +8,10 @@ use \App\Product;
 class ProductoController extends Controller
 {
 
-    public function buscar(){
-
-      if(isset($_GET['name'])){
-            $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->get();
-          } else{
-            $products = Product::all();
-          }
-            return view('product.buscar')->with( [ 'caca' => $products] );
-
-
-    }
 
     public function index()
   {
+
         $products = Product::paginate(3);
         $cantidad = ceil($products->count() / 3);
         $vars = compact('products');
@@ -209,14 +199,4 @@ class ProductoController extends Controller
           $productoAEditar->save();
           return redirect('/productos');
         }
-
-
-        /*public function buscar(Request $request)
-          {
-            $id = $request->input('prodName');
-            $prodBuscar = Product::find($id);
-            return view('/productos');
-
-          }*/
-
 }
