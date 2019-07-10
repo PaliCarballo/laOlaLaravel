@@ -11,6 +11,8 @@
     <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
   </div>
 </div> -->
+<div class="container-fluid">
+
 
 
 
@@ -107,7 +109,7 @@
 @endforeach
 
 </form>
-
+{{$caca->links()}}
 
 
 

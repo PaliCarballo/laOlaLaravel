@@ -22,15 +22,22 @@ class ProductoController extends Controller
         // return view('product.products', $vars);
 
         if(isset($_GET['name'])){
-              $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->get();
+
+              $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->paginate(3);
             } else{
-              $products = Product::all();
+  $products = Product::paginate(3);
             }
               return view('product.products')->with( [ 'caca' => $products] );
 
 
   }
 
+  // public function show(){
+  //   $products = Product::paginate(3);
+  //   $cantidad = ceil($products->count() / 3);
+  //
+  // return view('product.products')->with( [ 'products' => $products] );
+  // }
 
   public function borrarProducto($id)
   {
