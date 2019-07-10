@@ -44,6 +44,6 @@ class CarritoController extends Controller
   }
 
 
-  
+
 
 }

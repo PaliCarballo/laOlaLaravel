@@ -16,14 +16,6 @@
             @endif -->
 
 <div class="fondo-banner">
-  <form class="" action="/" method="get">
-    <div class="input-group mb-3">
-    <input type="text" name="name" class="form-control" >
-    <div class="input-group-append">
-      <button class="btn btn-success" type="submit">Buscar</button>
-    </div>
-  </div>
-   </form>
     <div class="texto-banner">
 
         <h1>HAMBURGUESAS</h1>

@@ -8,14 +8,27 @@ use \App\Product;
 class ProductoController extends Controller
 {
 
+    // public function buscar(){
+    //
+    //
+    //
+    // }
 
     public function index()
   {
+        // $products = Product::paginate(3);
+        // $cantidad = ceil($products->count() / 3);
+        // $vars = compact('products');
+        // return view('product.products', $vars);
 
-        $products = Product::paginate(3);
-        $cantidad = ceil($products->count() / 3);
-        $vars = compact('products');
-        return view('product.products', $vars);
+        if(isset($_GET['name'])){
+              $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->get();
+            } else{
+              $products = Product::all();
+            }
+              return view('product.products')->with( [ 'caca' => $products] );
+
+
   }
 
 

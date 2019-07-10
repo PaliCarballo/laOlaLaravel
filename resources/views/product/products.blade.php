@@ -2,8 +2,8 @@
 
 @section('contenido')
 
-<form class="" action="/productos" method="get">
-<div class="container">
+<!-- <form class="" action="/productos" method="get">
+<div class="container"> -->
 
   <!-- <div class="input-group mb-3">
   <input type="text" class="form-control" class="prodName" placeholder="" aria-label="" aria-describedby="">
@@ -14,13 +14,34 @@
 
 
 
+<form class="" action="/productos" method="get">
+  <div class="input-group mb-3">
+  <input type="text" name="name" class="form-control" >
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+  </div>
+</div>
+ </form>
 
+               <!-- <input type="text" name="name" value="" class="form-control">
+               <button type="submit" class="btn btn-primary">Buscar</button> -->
+
+
+            @if (session('mensaje'))
+               <div class="alert alert-success">
+                   {{ session('mensaje') }}
+               </div>
+            @endif
 
 
         <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
 @csrf
 
-  @foreach($products as $product)
+  @foreach($caca as $product)
+
+
+
+
         <div class="card mb-3" style="max-width: 640px;">
   <div class="row no-gutters">
 
@@ -87,7 +108,7 @@
 
 </form>
 
-   {{$products->links()}}
+
 
 
 

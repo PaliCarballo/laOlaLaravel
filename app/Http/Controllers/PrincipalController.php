@@ -15,16 +15,16 @@ class PrincipalController extends Controller
 
 public function productosDestacados(){
 
+  $products = Product::all();
+//  $cantidad = ceil($products->count() / 3);
+  $vars = compact('products');
 
-    //  public function buscar(){
-
-        if(isset($_GET['name'])){
-              $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->get();
-            } else{
-              $products = Product::all();
-            }
-              return view('index')->with( [ 'products' => $products] );
+  return view('index', $vars);
+}
 
 
-      }
+
+
+
+
 }
