@@ -5,16 +5,6 @@
 @section('contenido')
 
 
-               <!-- <input type="text" name="name" value="" class="form-control">
-               <button type="submit" class="btn btn-primary">Buscar</button> -->
-<!--
-
-            @if (session('mensaje'))
-               <div class="alert alert-success">
-                   {{ session('mensaje') }}
-               </div>
-            @endif -->
-
 <div class="fondo-banner">
     <div class="texto-banner">
 
@@ -36,7 +26,7 @@
             <article class="producto">
                 <div class="producto-hover">
                     <div class="producto-hover-content">
-                        <ion-icon name="heart"></ion-icon>   <h5 class="card-title"><a href='/productos' style="color: black; text-transform: uppercase; font-size: 1.5em">{{$product->name}}</a></h5>
+                        <ion-icon name="heart"></ion-icon><a href="/producto/"><h4>{{$product->name}}</h4></a>
                     </div>
                 </div>
                 <img src="/storage/{{$product->avatar}}"alt="Combo 1 Hamburguesas Veggie">
