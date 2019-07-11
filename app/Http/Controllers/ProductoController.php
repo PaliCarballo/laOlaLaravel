@@ -25,7 +25,7 @@ class ProductoController extends Controller
 
               $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->paginate(3);
             } else{
-  $products = Product::paginate(3);
+              $products = Product::paginate(3);
             }
               return view('product.products')->with( [ 'caca' => $products] );
 
