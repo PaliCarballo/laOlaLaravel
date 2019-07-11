@@ -5,16 +5,6 @@
 @section('contenido')
 
 
-               <!-- <input type="text" name="name" value="" class="form-control">
-               <button type="submit" class="btn btn-primary">Buscar</button> -->
-<!--
-
-            @if (session('mensaje'))
-               <div class="alert alert-success">
-                   {{ session('mensaje') }}
-               </div>
-            @endif -->
-
 <div class="fondo-banner">
     <div class="texto-banner">
 
