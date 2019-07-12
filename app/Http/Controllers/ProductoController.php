@@ -8,26 +8,36 @@ use \App\Product;
 class ProductoController extends Controller
 {
 
-    public function buscar(){
-
-      if(isset($_GET['name'])){
-            $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->get();
-          } else{
-            $products = Product::all();
-          }
-            return view('product.buscar')->with( [ 'caca' => $products] );
-
-
-    }
+    // public function buscar(){
+    //
+    //
+    //
+    // }
 
     public function index()
   {
-        $products = Product::paginate(3);
-        $cantidad = ceil($products->count() / 3);
-        $vars = compact('products');
-        return view('product.products', $vars);
+        // $products = Product::paginate(4);
+        // $cantidad = ceil($products->count() / 4);
+        // $vars = compact('products');
+        // return view('product.products', $vars);
+
+        if(isset($_GET['name'])){
+
+              $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->paginate(4);
+            } else{
+  $products = Product::paginate(4);
+            }
+              return view('product.products')->with( [ 'caca' => $products] );
+
+
   }
 
+  // public function show(){
+  //   $products = Product::paginate(4);
+  //   $cantidad = ceil($products->count() / 4);
+  //
+  // return view('product.products')->with( [ 'products' => $products] );
+  // }
 
   public function borrarProducto($id)
   {
@@ -209,6 +219,7 @@ class ProductoController extends Controller
           $productoAEditar->save();
           return redirect('/productos');
         }
+<<<<<<< HEAD
 
 
         /*public function buscar(Request $request)
@@ -221,4 +232,6 @@ class ProductoController extends Controller
               }
           }*/
 
+=======
+>>>>>>> daa25a50bc3188ff5b00b765ce44672d98a905ee
 }

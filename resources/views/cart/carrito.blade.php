@@ -1,7 +1,10 @@
 @extends('layouts.plantilla')
 
 @section('contenido')
-<div class="container" style="margin-bottom: 50px;">
+<div class="container" style="margin-top: 50px;">
+    <a class="btn btn-success" href="/productos
+    ">Seguir Comprando</a>
+
     <?php
           $suma = 0;
           ?>
@@ -10,9 +13,8 @@
     <form class="" action="/carrito/sacarCarrito" method="post">
     @csrf
 
-<br>
-<a class="btn btn-success" href="/productos
-">Seguir Comprando</a>
+
+
 <br>
             <div class="card-group">
               <div class="card">
