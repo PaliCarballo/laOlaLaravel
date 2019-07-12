@@ -5,7 +5,6 @@
 <form class="" action="/productos" method="get">
 <div class="container">
 
-<<<<<<< HEAD
   <div class="input-group mb-3">
   <input type="text" class="form-control" class="prodName" placeholder="" aria-label="" aria-describedby="">
   <div class="input-group-append">
@@ -13,10 +12,6 @@
   </div>
 </div>
 </form>
-=======
-
-
->>>>>>> 835ad8720ed424b017b9c8d53188b629e00c573c
 
 
 
@@ -79,7 +74,6 @@
       <a class="btn btn-success" href="/productos/delete/{{$product->id}}" >Borrar</a>
 
 @endif
-
       </div>
     </div>
 

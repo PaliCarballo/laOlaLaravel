@@ -211,7 +211,7 @@ class ProductoController extends Controller
         }
 
 
-        public function buscar(Request $request)
+        /*public function buscar(Request $request)
           {
 
             if ('prodName'!=null) {
@@ -219,6 +219,6 @@ class ProductoController extends Controller
               $prodNombre = Product::where('name' == $prodBuscado)->get();
               return $prodNombre;
               }
-          }
+          }*/
 
 }
