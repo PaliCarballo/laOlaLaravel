@@ -219,19 +219,5 @@ class ProductoController extends Controller
           $productoAEditar->save();
           return redirect('/productos');
         }
-<<<<<<< HEAD
 
-
-        /*public function buscar(Request $request)
-          {
-
-            if ('prodName'!=null) {
-              $prodBuscado = $request->input('prodName');
-              $prodNombre = Product::where('name' == $prodBuscado)->get();
-              return $prodNombre;
-              }
-          }*/
-
-=======
->>>>>>> daa25a50bc3188ff5b00b765ce44672d98a905ee
 }
