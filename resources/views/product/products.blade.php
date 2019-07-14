@@ -2,23 +2,14 @@
 
 @section('contenido')
 
-<!-- <form class="" action="/productos" method="get">
-<div class="container"> -->
-
-  <!-- <div class="input-group mb-3">
-  <input type="text" class="form-control" class="prodName" placeholder="" aria-label="" aria-describedby="">
-  <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
-  </div>
-</div> -->
 <div class="container">
-
+<!-- BUSCADOR -->
     <form style="padding: 0 15px;" class="" action="/productos" method="get">
       <div class="input-group mt-3">
         <input type="text" name="name" class="form-control" placeholder="Busca acá tus productos" aria-label="Busca acá tus productos" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="input-group-text" id="basic-addon2" type="submit"><i class="fas fa-search"></i></button>
-        </div>
+            <div class="input-group-append">
+                <button class="input-group-text" id="basic-addon2" type="submit"><i class="fas fa-search"></i></button>
+            </div>
       </div>
     </form>
 
@@ -29,9 +20,10 @@
     @endif
 
     <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
+
     @csrf
       <div class="row">
-        @foreach($caca as $product)
+        @foreach($products as $product)
           <div class="col-sm-6">
             <div class="card mb-3" style="max-width: 640px;">
               <div class="row no-gutters">
@@ -71,6 +63,9 @@
                     <br>
                     <h6 class="card-text" style="color:black"><small class="text-muted">Precio: $ {{$product->price}}</small></h6>
                     <br>
+
+                    <!-- <input type="number" name="cantidad" min =1 value=""> -->
+
                     <button type="submit" class="btn btn-warning"  name="product_id" value="{{$product->id}}">Agregar al carrito</button>
 
                     @if((Auth::user())&& (Auth::user()->admin))
@@ -86,61 +81,12 @@
         @endforeach
       </div>
     </form>
-    {{$caca->links()}}
+
+
+
+    {{$products->links()}}
 
 </div>
-
-
-
-
-
-
-
-
-
-
-        <!-- <article class="producto">
-                     <div class="producto-hover">
-                        <div class="producto-hover-content">
-                            <ion-icon name="heart"></ion-icon> <h4>Combo 2</h4>
-                        </div>
-                    </div>
-                    <img src="img/combo2.jpg" alt="Combo 2 Hamburguesas Veggie" >
-                </article>
-                <article class="producto">
-                    <div class="producto-hover">
-                        <div class="producto-hover-content">
-                            <ion-icon name="heart"></ion-icon> <h4>Combo 3</h4>
-                        </div>
-                    </div>
-                    <img src="img/combo3.jpg" alt="Combo 3 Hamburguesas Veggie">
-                </article>
-                <article class="producto">
-                    <div class="producto-hover">
-                        <div class="producto-hover-content">
-                            <ion-icon name="heart"></ion-icon> <h4>Combo 4</h4>
-                        </div>
-                    </div>
-                    <img src="img/combo4.jpg" alt="Combo 4 Hamburguesas Veggie">
-                </article>
-                <article class="producto">
-                    <div class="producto-hover">
-                        <div class="producto-hover-content">
-                            <ion-icon name="heart"></ion-icon> <h4>Combo 5</h4>
-                        </div>
-                    </div>
-                    <img src="img/combo5.jpg" alt="Combo 5 Hamburguesas Veggie" >
-                </article>
-                <article class="producto">
-                    <div class="producto-hover">
-                        <div class="producto-hover-content">
-                            <ion-icon name="heart"></ion-icon> <h4>Combo 6</h4>
-                        </div>
-                    </div>
-                    <img src="img/combo6.jpg" alt="Combo 6 Hamburguesas Veggie">
-                </article>
-            </div>
-      </section>-->
 
 
 

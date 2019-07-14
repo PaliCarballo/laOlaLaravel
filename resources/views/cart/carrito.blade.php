@@ -32,6 +32,14 @@
                   <p class="card-text"><small class="text-muted">Pack por 4 U: ${{$detalle->price}}</small></p>
                 </div>
               </div>
+
+              <div class="card" id="producto-precio">
+                <div class="card-body">
+                  <p class="card-text"><small class="text-muted"> Cantidad: {{$detalle->pivot->quantity}}</small></p>
+                  <p class="card-text"><small class="text-muted">Subtotal: {{$detalle->pivot->quantity * $detalle->price}}</small></p>
+                </div>
+              </div>
+
               <div class="card" id="boton-sacarCarrito">
                 <button type="submit" name="detalle_id" class="btn btn-dark active" value="{{$detalle->id}}">sacar del carrito</button>
               </div>
@@ -40,7 +48,7 @@
 
     </form>
 
-<?php  $subtotal[]= $detalle->price;
+<?php  $subtotal[]= $detalle->price * $detalle->pivot->quantity;
 
  $suma = array_sum($subtotal);
 

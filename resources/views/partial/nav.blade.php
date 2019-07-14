@@ -13,11 +13,8 @@
           xfbml      : true,
           version    : '{api-version}'
         });
-
         FB.AppEvents.logPageView();
-
       };
-
       (function(d, s, id){
          var js, fjs = d.getElementsByTagName(s)[0];
          if (d.getElementById(id)) {return;}
@@ -64,7 +61,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="/"><i class="fas fa-home"></i></ion-icon><br>Home </a>
       </li>
-      
+
       @if((Auth::user()) && (Auth::user()->admin))
       <li class="nav-item active">
         <a class="nav-link" href="/productos/agregar"><i class="fas fa-plus"></i></i></ion-icon><br>Agregar </a>
