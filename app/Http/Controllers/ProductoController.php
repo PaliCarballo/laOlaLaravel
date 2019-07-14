@@ -211,4 +211,5 @@ class ProductoController extends Controller
           $productoAEditar->save();
           return redirect('/productos');
         }
+
 }

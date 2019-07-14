@@ -2,8 +2,42 @@
 
 @section('contenido')
 
+<<<<<<< HEAD
 <div class="container">
 <!-- BUSCADOR -->
+=======
+<!-- <form class="" action="/productos" method="get">
+<div class="container"> -->
+
+
+  <!-- <div class="input-group mb-3">
+>>>>>>> daa25a50bc3188ff5b00b765ce44672d98a905ee
+  <input type="text" class="form-control" class="prodName" placeholder="" aria-label="" aria-describedby="">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+  </div>
+<<<<<<< HEAD
+</div>
+</form>
+
+
+
+        <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
+@csrf
+
+  @foreach($products as $product)
+        <div class="card mb-3" style="max-width: 640px;">
+  <div class="row no-gutters">
+
+
+    <div class="col-md-4">
+
+=======
+</div> -->
+<div class="container">
+
+
+>>>>>>> bbd579623cfc567637a560a17a7dc7c9990ff155
     <form style="padding: 0 15px;" class="" action="/productos" method="get">
       <div class="input-group mt-3">
         <input type="text" name="name" class="form-control" placeholder="Busca acá tus productos" aria-label="Busca acá tus productos" aria-describedby="basic-addon2">
@@ -77,8 +111,7 @@
                 </div>
               </div>
             </div>
-          </div>
-        @endforeach
+
       </div>
     </form>
 
