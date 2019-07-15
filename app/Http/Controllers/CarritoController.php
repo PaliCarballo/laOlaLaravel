@@ -19,6 +19,10 @@ class CarritoController extends Controller
 
     $user->carrito()->attach($request->product_id,['quantity'=>1]);
 
+  //  $carrito=Cart::all();
+    //$cantidadProd = $carrito->sum('product_id');
+
+
     return redirect('/carrito');
   }
 

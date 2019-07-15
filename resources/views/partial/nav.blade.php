@@ -64,7 +64,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="/"><i class="fas fa-home"></i></ion-icon><br>Home </a>
       </li>
-      
+
       @if((Auth::user()) && (Auth::user()->admin))
       <li class="nav-item active">
         <a class="nav-link" href="/productos/agregar"><i class="fas fa-plus"></i></i></ion-icon><br>Agregar </a>
@@ -80,7 +80,7 @@
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link" href="/carrito"><i class="fas fa-shopping-cart"></i></ion-icon>
+        <a class="nav-link" href="/carrito"><i class="fas fa-shopping-cart">5</i></ion-icon>
           <br> Carrito</a>
       </li>
 
