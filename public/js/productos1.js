@@ -2,7 +2,7 @@
 var regexName = /^[a-z A-Z]{3,30}$/;
 var regexDescription = /^[a-z A-Z 0-9,.!?´]*$/;
 var regexPrice = /^[0-9]*$/;
-var regexAvatar = /([a-z A-Z 0-9\s_\\.\-\(\):])+(.doc|.docx|.pdf|.jpg|.png)$/;
+var regexAvatar = /([a-z A-Z 0-9\s_\\.\-\(\):])+(.jpg|.png)$/;
 
 function validarVacio(input) {
     if (input.value == '') {
