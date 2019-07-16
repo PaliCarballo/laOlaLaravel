@@ -78,6 +78,7 @@
 
       <li class="nav-item active">
         <a class="nav-link" href="/carrito"><i class="fas fa-shopping-cart"></i></ion-icon>
+        <a class="nav-link" href="/carrito"><i class="fas fa-shopping-cart">5</i></ion-icon>
           <br> Carrito</a>
       </li>
 

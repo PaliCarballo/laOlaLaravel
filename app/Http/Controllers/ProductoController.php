@@ -16,19 +16,28 @@ class ProductoController extends Controller
 
     public function index()
   {
-
+        // $products = Product::paginate(4);
+        // $cantidad = ceil($products->count() / 4);
+        // $vars = compact('products');
+        // return view('product.products', $vars);
 
         if(isset($_GET['name'])){
 
               $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->paginate(4);
             } else{
-              $products = Product::paginate(4);
+  $products = Product::paginate(4);
             }
-              return view('product.products')->with( [ 'products' => $products] );
+              return view('product.products')->with( [ 'caca' => $products] );
 
 
   }
 
+  // public function show(){
+  //   $products = Product::paginate(4);
+  //   $cantidad = ceil($products->count() / 4);
+  //
+  // return view('product.products')->with( [ 'products' => $products] );
+  // }
 
   public function borrarProducto($id)
   {

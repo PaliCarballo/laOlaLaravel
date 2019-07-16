@@ -65,9 +65,27 @@
                     <br>
 
                     <!-- <input type="number" name="cantidad" min =1 value=""> -->
+  <input type="text" class="form-control" class="prodName" placeholder="" aria-label="" aria-describedby="">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
+  </div>
+</div>
+</form>
+
+
+
+        <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
+@csrf
+
+  @foreach($products as $product)
+        <div class="card mb-3" style="max-width: 640px;">
+  <div class="row no-gutters">
+
+>>>>>>> 1bee258407b709a4556fddf68c42581d3f5c47e6
 
                     <button type="submit" class="btn btn-warning"  name="product_id" value="{{$product->id}}">Agregar al carrito</button>
 
+<<<<<<< HEAD
                     @if((Auth::user())&& (Auth::user()->admin))
                       <a class="btn btn-success" href="/productos/editar/{{$product->id}}">Editar</a>
                       <a class="btn btn-success" href="/productos/delete/{{$product->id}}" >Borrar</a>
@@ -77,17 +95,13 @@
                 </div>
               </div>
             </div>
-          </div>
-        @endforeach
+
       </div>
     </form>
-
-
-
-    {{$products->links()}}
+    {{$caca->links()}}
 
 </div>
-
+</div>
 
 
 @endsection
