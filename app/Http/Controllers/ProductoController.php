@@ -27,7 +27,7 @@ class ProductoController extends Controller
             } else{
   $products = Product::paginate(4);
             }
-              return view('product.products')->with( [ 'caca' => $products] );
+              return view('product.products')->with( [ 'products' => $products] );
 
 
   }

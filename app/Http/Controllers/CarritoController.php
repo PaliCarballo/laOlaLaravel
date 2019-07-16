@@ -27,7 +27,7 @@ class CarritoController extends Controller
 
 
 }
-    return redirect('/carrito');
+    return redirect('/productos');
   }
 
 
@@ -43,6 +43,17 @@ class CarritoController extends Controller
 
     $datalles=$user->carrito;
     return view('cart.carrito')
+      ->with([
+        'detalles' => $datalles
+      ]);
+
+  }
+
+  public function cantidadNav(){
+    $user =Auth::user();
+
+    $datalles=$user->carrito;
+    return view('partial.nav')
       ->with([
         'detalles' => $datalles
       ]);
