@@ -64,12 +64,20 @@ class CarritoController extends Controller
 
     $user =Auth::user();
 
+       $user =Auth::user();
+      $producto = $user->carrito->where('id', $request->product_id)->first();
+      //  dd($producto);
+
+        if ($producto) {
+       $cantidad = $producto->pivot->quantity - 1;
+          $user->carrito()->updateExistingPivot($request->product_id,['quantity'=> $cantidad ]);
+        } else {
     $user->carrito()->detach($request->detalle_id,['quantity'=>1]);
 
     return redirect('/carrito');
   }
 
-
+}
 
 
 }

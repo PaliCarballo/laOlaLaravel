@@ -17,28 +17,19 @@ class ProductoController extends Controller
 
     public function index()
   {
-        // $products = Product::paginate(4);
-        // $cantidad = ceil($products->count() / 4);
-        // $vars = compact('products');
-        // return view('product.products', $vars);
+
 
         if(isset($_GET['name'])){
 
               $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->paginate(4);
             } else{
-  $products = Product::paginate(4);
+              $products = Product::paginate(4);
             }
               return view('product.products')->with( [ 'products' => $products] );
 
 
   }
 
-  // public function show(){
-  //   $products = Product::paginate(4);
-  //   $cantidad = ceil($products->count() / 4);
-  //
-  // return view('product.products')->with( [ 'products' => $products] );
-  // }
 
   public function borrarProducto($id)
   {
@@ -50,6 +41,7 @@ class ProductoController extends Controller
   }
 
     public function borrar(Request $request)
+
     {
         $id = $request['id'];
 
@@ -64,6 +56,7 @@ class ProductoController extends Controller
         }
       return redirect('/productos')->with('mensaje', 'dibfgfddr!');
     }
+
 
 
 
@@ -137,7 +130,10 @@ class ProductoController extends Controller
           $product->avatar4 = $nombreArchivo;
 
           $product->save();
-             return redirect('/productos');
+          if($request->isJson()){
+              return response()->json(['products' => $products]);
+          }
+          return redirect('/productos')->with('mensaje', 'Producto Guardado exitosamente!');
   }
 
 

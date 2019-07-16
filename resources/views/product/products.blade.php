@@ -3,14 +3,13 @@
 @section('contenido')
 
 <div class="container">
-
 <!-- BUSCADOR -->
     <form style="padding: 0 15px;" class="" action="/productos" method="get">
       <div class="input-group mt-3">
         <input type="text" name="name" class="form-control" placeholder="Busca acá tus productos" aria-label="Busca acá tus productos" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="input-group-text" id="basic-addon2" type="submit"><i class="fas fa-search"></i></button>
-        </div>
+            <div class="input-group-append">
+                <button class="input-group-text" id="basic-addon2" type="submit"><i class="fas fa-search"></i></button>
+            </div>
       </div>
     </form>
 
@@ -20,7 +19,12 @@
         </div>
     @endif
 
+<<<<<<< HEAD
     
+=======
+    <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
+
+>>>>>>> 33e03ab58ac5382026dbd95cea4fa57417ba7145
     @csrf
       <div class="row" id="div-papi">
         @foreach($products as $product)
@@ -56,7 +60,6 @@
                     </a>
                   </div>
                 </div>
-
                 <div class="col-md-8">
                   <div class="card-body">
                     <h5 class="card-title" style="color: black; text-transform: uppercase; font-size: 1.5em">{{$product->name}}</h5>
@@ -65,10 +68,12 @@
                     <h6 class="card-text" style="color:black"><small class="text-muted">Precio: $ {{$product->price}}</small></h6>
                     <br>
 
+
                     <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
                       <!-- <input type="number" name="cantidad" min =1 value=""> -->
                       <button type="submit" class="btn btn-warning"  name="product_id" value="{{$product->id}}">Agregar al carrito</button>
                     
+
 
                     @if((Auth::user())&& (Auth::user()->admin))
                       <a class="btn btn-success" href="/productos/editar/{{$product->id}}">Editar</a>
@@ -81,7 +86,6 @@
 
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -117,13 +121,21 @@
             <!-- end modal -->
         @endforeach
       </div>
+<<<<<<< HEAD
    
+=======
+    </form>
+
+
+
+>>>>>>> 33e03ab58ac5382026dbd95cea4fa57417ba7145
     {{$products->links()}}
 
 </div>
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -133,3 +145,6 @@
 <script src="js/products.js"></script>
 
 @endsection
+=======
+@endsection
+>>>>>>> 33e03ab58ac5382026dbd95cea4fa57417ba7145
