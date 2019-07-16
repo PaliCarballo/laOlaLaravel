@@ -1,5 +1,3 @@
-
-
 @extends('layouts.plantilla')
 
 @section('contenido')
@@ -26,7 +24,7 @@
             <article class="producto">
                 <div class="producto-hover">
                     <div class="producto-hover-content">
-                        <ion-icon name="heart"></ion-icon> <h4>{{$product->name}}</h4>
+                        <ion-icon name="heart"></ion-icon>   <h5 class="card-title"><a href='/productos?name={{$product->name}}' style="color: black; text-transform: uppercase; font-size: 1.5em">{{$product->name}}</a></h5>
                     </div>
                 </div>
                 <img src="/storage/{{$product->avatar}}"alt="Combo 1 Hamburguesas Veggie">

@@ -139,7 +139,7 @@ background-color: black;
 }
 .pagination{
   display: flex;
-flex-direction:row-reverse;
+justify-content: flex-end;
 list-style: none;
 border-radius: .25rem;
 }

@@ -8,12 +8,25 @@ use \App\Product;
 class ProductoController extends Controller
 {
 
+    // public function buscar(){
+    //
+    //
+    //
+    // }
+
     public function index()
   {
-        $products = Product::paginate(3);
-        $cantidad = ceil($products->count() / 3);
-        $vars = compact('products');
-        return view('product.products', $vars);
+
+
+        if(isset($_GET['name'])){
+
+              $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->paginate(4);
+            } else{
+              $products = Product::paginate(4);
+            }
+              return view('product.products')->with( [ 'products' => $products] );
+
+
   }
 
 
@@ -35,7 +48,7 @@ class ProductoController extends Controller
   }
 
 
-
+//
     public function createProduct()
     {
         return view('product.create');
@@ -105,9 +118,10 @@ class ProductoController extends Controller
           $product->avatar4 = $nombreArchivo;
 
           $product->save();
-          return redirect('/productos');
+             return redirect('/productos');
+  }
 
-    }
+
 
     public function edit($id)
     {
@@ -197,14 +211,5 @@ class ProductoController extends Controller
           $productoAEditar->save();
           return redirect('/productos');
         }
-
-
-        /*public function buscar(Request $request)
-          {
-            $id = $request->input('prodName');
-            $prodBuscar = Product::find($id);
-            return view('/productos');
-
-          }*/
 
 }

@@ -52,13 +52,10 @@ div.cardp a {
   transition:0.2s background-color;
 }
 
-<<<<<<< HEAD
 img.card-img {
   width: 30%;
   height: 30%;
 }
-=======
->>>>>>> 9f9f31fb20a2d9ae89d6d24d93a3eab217be7851
 
 @media (min-width:768px) {
   div.cardp {

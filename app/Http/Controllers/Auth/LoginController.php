@@ -63,6 +63,7 @@ class LoginController extends Controller
         $user = Socialite::driver('facebook')->user();
 
 
+
         $usuario = User::create([
 
                 'name' => $user['name'],
