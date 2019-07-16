@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Product;
+use \App\Cart;
 
 class ProductoController extends Controller
 {
@@ -49,12 +50,21 @@ class ProductoController extends Controller
   }
 
     public function borrar(Request $request)
-  {
-        $id = $request ['id'];
-        $products = Product::find($id);
-        $products->delete();
-        return redirect('/productos');
-  }
+    {
+        $id = $request['id'];
+
+        $carritos = Cart::where('product_id', '=', $id);
+        $carritos->delete();
+
+        $product = Product::find($id);
+        $product->delete();
+
+        if ($request->isJson()) {
+          return response()->json(['mensaje' => 'que seas muy feliz']);
+        }
+      return redirect('/productos')->with('mensaje', 'dibfgfddr!');
+    }
+
 
 
 //
