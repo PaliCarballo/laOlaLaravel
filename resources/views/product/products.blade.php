@@ -19,12 +19,16 @@
         </div>
     @endif
 
+<<<<<<< HEAD
+    
+=======
     <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
 
+>>>>>>> 33e03ab58ac5382026dbd95cea4fa57417ba7145
     @csrf
-      <div class="row">
+      <div class="row" id="div-papi">
         @foreach($products as $product)
-          <div class="col-sm-6">
+      <div class="col-sm-6" id="div-producto{{$product->id}}">
             <div class="card mb-3" style="max-width: 640px;">
               <div class="row no-gutters">
                 <div class="col-md-4">
@@ -64,30 +68,83 @@
                     <h6 class="card-text" style="color:black"><small class="text-muted">Precio: $ {{$product->price}}</small></h6>
                     <br>
 
-                    <!-- <input type="number" name="cantidad" min =1 value=""> -->
 
-                    <button type="submit" class="btn btn-warning"  name="product_id" value="{{$product->id}}">Agregar al carrito</button>
+                    <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
+                      <!-- <input type="number" name="cantidad" min =1 value=""> -->
+                      <button type="submit" class="btn btn-warning"  name="product_id" value="{{$product->id}}">Agregar al carrito</button>
+                    
+
 
                     @if((Auth::user())&& (Auth::user()->admin))
                       <a class="btn btn-success" href="/productos/editar/{{$product->id}}">Editar</a>
-                      <a class="btn btn-success" href="/productos/delete/{{$product->id}}" >Borrar</a>
+                      <a class="btn btn-success" href="#" data-toggle="modal" data-target="#producto{{$product->id}}">Borrar</a>
+                    
+                     
                     @endif
+
+                  </form>
 
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="producto{{$product->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+            
+                  <form class="modal-eliminar" id="form-{{$product->id}}" action="/productos/delete/{{$product->id}}" method="post">
+                    @csrf
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: black;">Seguro querés eliminar este producto?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body" style="color: black;">
+                    {{$product->name}}
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Volver</button>
+            
+                    <input type="hidden" name="id" value="{{$product->id}}">
+                    <input type="submit" class="btn btn-danger" name="" value="Borrar Producto">
+                  </div>
+            
+                </form>
+            
+                </div>
+              </div>
+            </div>
+            <!-- end modal -->
         @endforeach
       </div>
+<<<<<<< HEAD
+   
+=======
     </form>
 
 
 
+>>>>>>> 33e03ab58ac5382026dbd95cea4fa57417ba7145
     {{$products->links()}}
 
 </div>
 
 
 
+<<<<<<< HEAD
+
+
+
+
+
+<script type="text/javascript" src="js/librerias.js"></script>
+<script src="js/products.js"></script>
+
 @endsection
+=======
+@endsection
+>>>>>>> 33e03ab58ac5382026dbd95cea4fa57417ba7145

@@ -66,8 +66,14 @@
               <a class="nav-link" href="/preguntas"><i class="fas fa-question"></i></i></i><br>F.A.Q.</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/carrito"><i class="fas fa-shopping-cart"></i></ion-icon>({{ \App\Cart::sum('quantity') }})
+              <a class="nav-link" href="/carrito"><i class="fas fa-shopping-cart"></i></ion-icon>
+              
+               @if($user = Auth::user())
+                ({{ $user->carrito()->count() }})
+              @endif
+
               <br> Carrito</a>
+              
             </li>
 
             @guest
