@@ -1,53 +1,155 @@
-window.onload = () => {
-    var formGenre = document.querySelector('#form-genre');
 
-    formGenre.onsubmit = function(event) {
-        this.action;
-        event.preventDefault();
-        var elementos = formGenre.elements;
-        for (elemento of elementos) {
-            if (elemento.type == 'text' && elemento.name == 'name' && validarVacio(elemento)) {
-                return false;
+var regexName = /^[a-z A-Z]{3,30}$/;
+var regexDescription = /^[a-z A-Z 0-9,.!?´]*$/;
+var regexPrice = /^[0-9]*$/;
+var regexAvatar = /([a-z A-Z 0-9\s_\\.\-\(\):])+(.doc|.docx|.pdf|.jpg|.png)$/;
 
-            }
+function validarVacio(input) {
+    if (input.value == '') {
+        pintarError(input, 'Debe de estar lleno');
+        return true;
+    }
+    return false
+}
+
+function pintarError(input, mensaje) {
+    input.classList.add('is-invalid');
+    var error = document.createElement('span');
+    error.setAttribute('class','invalid-feedback');
+    var strong = document.createElement('strong');
+    strong.innerText = mensaje;
+    var div = elemento.parentElement;
+    if (div.children[2]) {
+        div.removeChild(div.children[2]);
+    }
+    error.append(strong);
+    div.append(error);
+}
+
+window.onload = function () {
+
+    var name = document.querySelector('#name');
+    name.onblur = function () {
+        if (regexName.test(this.value)) {
+            this.classList.remove('is-invalid');
         }
-          //
-          // && elemento.type == 'text-area' && elemento.description == 'description' && elemento.type == 'number' && elemento.price == 'price' && elemento.type == 'file' && elemento.avatar == 'avatar' && elemento.avatar1 == 'avatar1' && elemento.avatar2 == 'avatar2' && elemento.avatar3 == 'avatar3' && elemento.avatar4 == 'avatar4' &&
-           // 
-           // 'input[description="_token"]','input[price="_token"]','input[avatar="_token"]','input[avatar1="_token"]','input[avatar2="_token"]','input[avatar3="_token"]','input[avatar4="_token"]'
+    }
 
-        //aqui hago la llamada fetch para que guarde en ruta de laravel
-            //, esta vez no va a ser a una api sino a una ruta en web.php
-        var token = this.querySelector('input[name="_token"]').value;
+    var description = document.querySelector('#description');
+    description.onblur = function () {
+        if (regexDescription.test(this.value)) {
+            this.classList.remove('is-invalid');
+        }
+    }
 
-        var campos = { 'name' : this.querySelector('input[name="name"]').value };
+    var price = document.querySelector('#price');
 
-        var opciones = {
-            method: 'POST',
-            body: JSON.stringify(campos),
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json, text-plain, */*",
-                "X-Requested-With": "XMLHttpRequest",
-                "X-CSRF-TOKEN": token
+    price.onblur = function () {
+        if (regexPrice.test(this.value)) {
+            this.classList.remove('is-invalid');
+        }
+    }
+
+    var form = document.querySelector('#form-create');
+
+    form.onblur = function () {
+        if (regexName.test(this.value)) {
+            this.classList.remove('is-invalid');
+        }
+    }
+
+    var avatar = document.querySelector('#avatar');
+
+    avatar.onblur = function () {
+        if (regexAvatar.test(this.value)) {
+            this.classList.remove('is-invalid');
+        }
+    }
+
+    var avatar1 = document.querySelector('#avatar1');
+
+    avatar1.onblur = function () {
+        if (regexAvatar.test(this.value)) {
+            this.classList.remove('is-invalid');
+        }
+    }
+
+    var avatar2 = document.querySelector('#avatar2');
+
+    avatar2.onblur = function () {
+        if (regexAvatar.test(this.value)) {
+            this.classList.remove('is-invalid');
+        }
+    }
+
+    var avatar3 = document.querySelector('#avatar3');
+
+    avatar3.onblur = function () {
+        if (regexAvatar.test(this.value)) {
+            this.classList.remove('is-invalid');
+        }
+    }
+
+    var avatar4 = document.querySelector('#avatar4');
+
+    avatar4.onblur = function () {
+        if (regexAvatar.test(this.value)) {
+            this.classList.remove('is-invalid');
+        }
+    }
+
+    form.onsubmit = function (event) {
+        var elementos = this.elements;
+        for (elemento of elementos) {
+            if (elemento.type == 'submit' || elemento.type == 'hidden') {
+                continue;
+
             }
-        };
-        fetch(this.action, opciones)
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(datos){
-            console.log(datos)
-            var listado = document.querySelector('#genres-list');
-            var a = document.createElement('a');
-            a.setAttribute('href', `/productos/${datos.producto.id}`);
-            a.innerText = datos.producto.name;
-            listado.append(a);
-            alert('Genero guardado exitosamente, puedo mostrar un alert de bootstrap');
-            $('#myModal').modal('hide');
-        })
-        .catch(function(error){
-            console.log(error);
-        })
+            if (elemento.type != 'file' && validarVacio(elemento)) {
+                event.preventDefault();
+            }
+            if (elemento.name == 'name' &&  !regexName.test(elemento.value)) {
+                pintarError(elemento, 'Nombre invalido');
+                event.preventDefault();
+            }
+            if (elemento.name == 'description' &&  !regexDescription.test(elemento.value)) {
+                pintarError(elemento, 'Descripción invalida');
+                event.preventDefault();
+            }
+            if (elemento.name == 'price' &&  !regexPrice.test(elemento.value)) {
+                pintarError(elemento, 'Imagen invalida');
+                event.preventDefault();
+            }
+            if (elemento.name == 'avatar' &&  !regexAvatar.test(elemento.value)) {
+                pintarError(elemento, 'Imagen invalida');
+                event.preventDefault();
+            }
+            if (elemento.name == 'avatar1' &&  !regexAvatar.test(elemento.value)) {
+                pintarError(elemento, 'Imagen invalida');
+                event.preventDefault();
+            }
+            if (elemento.name == 'avatar2' &&  !regexAvatar.test(elemento.value)) {
+                pintarError(elemento, 'Imagen invalida');
+                event.preventDefault();
+            }
+            if (elemento.name == 'avatar3' &&  !regexAvatar.test(elemento.value)) {
+                pintarError(elemento, 'Imagen invalida');
+                event.preventDefault();
+            }
+            if (elemento.name == 'avatar4' &&  !regexAvatar.test(elemento.value)) {
+                pintarError(elemento, 'Imagen invalida');
+                event.preventDefault();
+            }
+            // if (elemento.name == 'password') {
+            //     var confirm = document.querySelector('#password-confirm');
+            //     if (elemento.value.length < 8) {
+            //         pintarError(elemento, 'El password debe tener minimo 8 caracters');
+            //         event.preventDefault();
+            //     } else if (elemento.value != confirm.value) {
+            //         pintarError(elemento, 'Los pass no coinciden');
+            //         event.preventDefault();
+            //     }
+            // }
+        }
     }
 }

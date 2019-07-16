@@ -44,8 +44,12 @@ class ProductoController extends Controller
         $id = $request ['id'];
         $products = Product::find($id);
         $products->delete();
-        return redirect('/productos');
-  }
+        // if($request->isJson()){
+        //     return response()->json(['products' => $products]);
+          return redirect('/productos')->with('mensaje', 'Producto Borrado exitosamente!');
+        }
+
+
 
 
 //
@@ -118,7 +122,10 @@ class ProductoController extends Controller
           $product->avatar4 = $nombreArchivo;
 
           $product->save();
-             return redirect('/productos');
+          if($request->isJson()){
+              return response()->json(['products' => $products]);
+          }
+          return redirect('/productos')->with('mensaje', 'Producto Guardado exitosamente!');
   }
 
 
