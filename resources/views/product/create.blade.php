@@ -85,5 +85,5 @@
 
 
 
-<script type="text/javascript" src="/js/products.js"></script>
+<script type="text/javascript" src="/js/productos1.js"></script>
 @endsection
