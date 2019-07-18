@@ -23,8 +23,6 @@
         </div>
     @endif
 
-    <form class="" action="/productos/agregarCarrito" method="post">
-    @csrf
       <div class="row" id="div-papi">
         @foreach($products as $product)
           <div class="col-sm-4" id="div-producto{{$product->id}}">
@@ -58,7 +56,7 @@
             <div class="modal fade" id="producto{{$product->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
-            
+
                   <form class="modal-eliminar" id="form-{{$product->id}}" action="/productos/delete/{{$product->id}}" method="post">
                   @csrf
                     <div class="modal-header">
@@ -84,15 +82,7 @@
             <!-- end modal -->
         @endforeach
       </div>
-    </form>
     {{$products->links()}}
-
-
-
-
-
-
-
 
 </div>
 
@@ -100,4 +90,3 @@
 <script src="js/products.js"></script>
 
 @endsection
-

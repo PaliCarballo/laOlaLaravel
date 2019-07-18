@@ -65,13 +65,13 @@
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="/carrito"><i class="fas fa-shopping-cart"></i></ion-icon>
-              
+
                @if($user = Auth::user())
                 ({{ $user->carrito()->count() }})
               @endif
 
               <br> Carrito</a>
-              
+
             </li>
 
             @guest
