@@ -1,6 +1,9 @@
 <?php
 Route::get('/productos', 'ProductoController@index');
 
+
+
+
 //Route::get('/productos', 'ProductoController@show');
 
 //para el admin
