@@ -3,15 +3,17 @@
 @section('contenido')
 
 <div class="container">
-<!-- BUSCADOR -->
-    <form style="padding: 0 15px;" class="" action="/productos" method="get">
-      <div class="input-group mt-3">
-        <input type="text" name="name" class="form-control" placeholder="Buscá acá tus hamburguesas" aria-label="Buscá acá tus hamburguesas" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="input-group-text" id="basic-addon2" type="submit"><i class="fas fa-search"></i></button>
-            </div>
-      </div>
-    </form>
+  <div class="row">
+    <h1>{{$product->id}}</h1>
+    <div class="col-sm-6">
+    
+    </div>
+    <div class="col-sm-6">
+    
+    </div>
+  </div>
+  
+   
 
     @if (session('mensaje'))
         <div class="alert alert-success">
@@ -117,7 +119,7 @@
         @endforeach
       </div>
     </form>
-    {{$products->links()}}
+    
 
 </div>
 
@@ -125,4 +127,3 @@
 <script src="js/products.js"></script>
 
 @endsection
-

@@ -25,14 +25,10 @@ p {
   color: white;
   font-size: 16px;
 }
-h1{
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans Condensed', sans-serif;
   color: white;
-font-family: 'Shadows Into Light', cursive;
-  font-size: 3em;
-}
- h2, h3, h4, h5, h6 {
-  font-family: 'Fjalla One', sans-serif;
-  color: white;
+  font-weight: 700;
 }
 .btn-primary {
   background-color: #64a19d!important;
@@ -51,15 +47,19 @@ font-family: 'Shadows Into Light', cursive;
 
 /* Estilos del Nav */
 .logo {
+  background-image: url(../img/logo-m.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 70px;
+  top: 10px;
+  left: 20px;
+  width: 44px;
   height: auto;
+  padding: 30px 1px;
 }
 nav{
   background-color: #000;
-  height: 100px;
+  height: 80px;
   z-index: 1000;
 }
 .navbar {
@@ -72,8 +72,13 @@ nav{
   text-align: center;
 }
 .navbar-dark .navbar-toggler {
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  margin-right: 15px;
+  position: absolute;
+  right: 15px;
+  border: 2px solid rgba(255, 255, 255);
+}
+.navbar-dark i.fa-bars {
+  font-size: 1em;
+  margin-top: 6px;
 }
 .navbar-collapse {
   padding-top: 0px;
@@ -90,7 +95,7 @@ nav ul {
 }
 nav ul li a{
   font-family: 'Fjalla One', sans-serif;
-  font-size: 1em;
+  font-size: 0.8em;
   color: white;
   list-style-type: none;
   text-transform: uppercase;
@@ -143,9 +148,19 @@ justify-content: flex-end;
 list-style: none;
 border-radius: .25rem;
 }
+.page-item.active .page-link {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+  font-weight: 700;
+}
+.page-link {
+  color: #000;
+  font-family: 'Quicksand', sans serif;
+}
+
 
 /* Estilos del footer */
-
 footer {
     background-color: #111;
     color: white;
@@ -360,8 +375,7 @@ footer .btn {
   text-align: center;
 }
 .navbar-nav .nav-link {
-    padding-right: 00px;
-    padding-left: 26px;
+    padding: 0 9px;
     margin-right: 00px;
     margin-left: 00px;
 }
@@ -369,12 +383,15 @@ nav h1 {
   padding: 0px 0px 0 100px;
 }
 .logo {
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   position: absolute;
-  top: 10px;
-  left: 15px;
-  width: 80px;
+  top: 18px;
+  left: 28px;
+  width: 172px;
   height: auto;
-  padding: 5px;
+  padding: 25px;
 }
 nav ul li a p {
   display: inline;
@@ -383,36 +400,31 @@ nav ul li a p {
 }
 }
 @media (min-width:1024px){
-  .logo {
-    position: absolute;
-    top: 6px;
-    left: 32px;
-    width: 87px;
-    height: auto;
+    .logo {
+      left: 32px;
+    }
+    nav h1{
+      font-size: 3.5em;
+      margin-left: 3%;
+    }
+    .navbar-expand-lg .navbar-nav {
+      width: 100%;
+      font-size: 13px;
+      padding-top: 0px;
+      justify-content: flex-end;
+      text-align: center;
+    }
+    .navbar-collapse {
+      padding-top: -10px;
+      margin-left:0px;
+      margin-right:  00px;
+    }
+    nav ul li a {
+      font-size: 1.2em;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link {
+      padding: 0 15px;
   }
-  nav h1{
-    font-size: 3.5em;
-    margin-left: 3%;
-  }
-  .navbar-expand-lg .navbar-nav {
-    width: 100%;
-    font-size: 13px;
-    padding-top: 0px;
-    justify-content: flex-end;
-    text-align: center;
-  }
-  .navbar-collapse {
-    padding-top: -10px;
-    margin-left:0px;
-    margin-right:  00px;
-  }
-  nav ul li a {
-    font-size: 1.5em;
-  }
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 2.5rem;
-    padding-left: .5rem;
-}
 }
 
 
