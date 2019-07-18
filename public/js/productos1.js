@@ -2,7 +2,8 @@
 var regexName = /^[a-z A-Z]{3,30}$/;
 var regexDescription = /^[a-z A-Z 0-9,.!?´]*$/;
 var regexPrice = /^[0-9]*$/;
-var regexAvatar = /([a-z A-Z 0-9\s_\\.\-\(\):])+(.jpg|.png)$/;
+var regexAvatar = /.[jpeg|jpg|png]$/;
+
 
 function validarVacio(input) {
     if (input.value == '') {
@@ -50,13 +51,7 @@ window.onload = function () {
         }
     }
 
-    var form = document.querySelector('#form-create');
 
-    form.onblur = function () {
-        if (regexName.test(this.value)) {
-            this.classList.remove('is-invalid');
-        }
-    }
 
     var avatar = document.querySelector('#avatar');
 
@@ -65,35 +60,42 @@ window.onload = function () {
             this.classList.remove('is-invalid');
         }
     }
+    //
+    // var avatar1 = document.querySelector('#avatar1');
+    //
+    // avatar1.onblur = function () {
+    //     if (regexAvatar.test(this.value) {
+    //         this.classList.remove('is-invalid');
+    //     }
+    // }
+    //
+    // var avatar2 = document.querySelector('#avatar2');
+    //
+    // avatar2.onblur = function () {
+    //     if (regexAvatar.test(this.value)) {
+    //         this.classList.remove('is-invalid');
+    //     }
+    // }
+    //
+    // var avatar3 = document.querySelector('#avatar3');
+    //
+    // avatar3.onblur = function () {
+    //     if (regexAvatar.test(this.value)) {
+    //         this.classList.remove('is-invalid');
+    //     }
+    // }
+    //
+    // var avatar4 = document.querySelector('#avatar4');
+    //
+    // avatar4.onblur = function () {
+    //     if (regexAvatar.test(this.value) {
+    //         this.classList.remove('is-invalid');
+    //     }
+    // }
+    var form = document.querySelector('#form-create');
 
-    var avatar1 = document.querySelector('#avatar1');
-
-    avatar1.onblur = function () {
-        if (regexAvatar.test(this.value)) {
-            this.classList.remove('is-invalid');
-        }
-    }
-
-    var avatar2 = document.querySelector('#avatar2');
-
-    avatar2.onblur = function () {
-        if (regexAvatar.test(this.value)) {
-            this.classList.remove('is-invalid');
-        }
-    }
-
-    var avatar3 = document.querySelector('#avatar3');
-
-    avatar3.onblur = function () {
-        if (regexAvatar.test(this.value)) {
-            this.classList.remove('is-invalid');
-        }
-    }
-
-    var avatar4 = document.querySelector('#avatar4');
-
-    avatar4.onblur = function () {
-        if (regexAvatar.test(this.value)) {
+    form.onblur = function () {
+        if (regexName.test(this.value)) {
             this.classList.remove('is-invalid');
         }
     }
@@ -105,9 +107,7 @@ window.onload = function () {
                 continue;
 
             }
-            if (elemento.type != 'file' && validarVacio(elemento)) {
-                event.preventDefault();
-            }
+
             if (elemento.name == 'name' &&  !regexName.test(elemento.value)) {
                 pintarError(elemento, 'Nombre invalido');
                 event.preventDefault();
@@ -120,36 +120,30 @@ window.onload = function () {
                 pintarError(elemento, 'Imagen invalida');
                 event.preventDefault();
             }
-            if (elemento.name == 'avatar' &&  !regexAvatar.test(elemento.value)) {
-                pintarError(elemento, 'Imagen invalida');
+            if (elemento.type != 'file' && validarVacio(elemento)) {
                 event.preventDefault();
             }
-            if (elemento.name == 'avatar1' &&  !regexAvatar.test(elemento.value)) {
-                pintarError(elemento, 'Imagen invalida');
+            if (elemento.type == 'file' &&  !regexAvatar.test(elemento.value)) {
+                pintarError(elemento, 'La extension de la imagen tiene que ser .JPG,.JPEG,.PNG.');
                 event.preventDefault();
             }
-            if (elemento.name == 'avatar2' &&  !regexAvatar.test(elemento.value)) {
-                pintarError(elemento, 'Imagen invalida');
-                event.preventDefault();
-            }
-            if (elemento.name == 'avatar3' &&  !regexAvatar.test(elemento.value)) {
-                pintarError(elemento, 'Imagen invalida');
-                event.preventDefault();
-            }
-            if (elemento.name == 'avatar4' &&  !regexAvatar.test(elemento.value)) {
-                pintarError(elemento, 'Imagen invalida');
-                event.preventDefault();
-            }
-            // if (elemento.name == 'password') {
-            //     var confirm = document.querySelector('#password-confirm');
-            //     if (elemento.value.length < 8) {
-            //         pintarError(elemento, 'El password debe tener minimo 8 caracters');
-            //         event.preventDefault();
-            //     } else if (elemento.value != confirm.value) {
-            //         pintarError(elemento, 'Los pass no coinciden');
-            //         event.preventDefault();
-            //     }
+            // if (elemento.name == 'avatar1' &&  !regexAvatar.test(elemento.value)) {
+            //     pintarError(elemento, 'Imagen invalida');
+            //     event.preventDefault();
             // }
+            // if (elemento.name == 'avatar2' &&  !regexAvatar.test(elemento.value)) {
+            //     pintarError(elemento, 'Imagen invalida');
+            //     event.preventDefault();
+            // }
+            // if (elemento.name == 'avatar3' &&  !regexAvatar.test(elemento.value)) {
+            //     pintarError(elemento, 'Imagen invalida');
+            //     event.preventDefault();
+            // }
+            // if (elemento.name == 'avatar4' &&  !regexAvatar.test(elemento.value) {
+            //     pintarError(elemento, 'Imagen invalida');
+            //     event.preventDefault();
+            // }
+
         }
     }
 }

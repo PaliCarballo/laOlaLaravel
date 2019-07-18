@@ -6,7 +6,7 @@
 
   <h2>Agregá un nuevo producto</h2>
 
-<form id= form-create action="/productos" method="post" enctype="multipart/form-data">
+<form id="form-create" action="/productos" method="post" enctype="multipart/form-data">
 
   @csrf
 
@@ -39,39 +39,43 @@
     <div class="form-group">
         <label for="avatar">Subir imagen:</label>
 
-        <input type="file" id="avatar" name="avatar">
+        <input type="file" id="avatar" name="avatar" class="form-control @error('avatar') is-invalid @enderror">
         @error('avatar')
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div> <br>
+
     <div class="form-group">
         <label for="avatar1">Subir imagen:</label>
 
-        <input type="file" id="avatar1" name="avatar1">
+        <input type="file" id="avatar1" name="avatar1" class="form-control @error('avatar1') is-invalid @enderror">
         @error('avatar1')
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div> <br>
+
     <div class="form-group">
         <label for="avatar2">Subir imagen:</label>
 
-        <input type="file" id="avatar2" name="avatar2">
+        <input type="file" id="avatar2" name="avatar2" class="form-control @error('avatar2') is-invalid @enderror">
         @error('avatar2')
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div> <br>
+
     <div class="form-group">
         <label for="avatar3">Subir imagen:</label>
 
-        <input type="file" id="avatar3" name="avatar3">
+        <input type="file" id="avatar3" name="avatar3" class="form-control @error('avatar3') is-invalid @enderror">
         @error('avatar3')
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div> <br>
+
     <div class="form-group">
         <label for="avatar4">Subir imagen:</label>
 
-        <input type="file" id="avatar4" name="avatar4">
+        <input type="file" id="avatar4" name="avatar4" class="form-control @error('avatar4') is-invalid @enderror">
         @error('avatar4')
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
@@ -84,6 +88,6 @@
 </div>
 
 
-
+<script type="text/javascript" src="/js/librerias.js"></script>
 <script type="text/javascript" src="/js/productos1.js"></script>
 @endsection

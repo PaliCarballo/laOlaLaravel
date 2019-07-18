@@ -19,13 +19,7 @@
         </div>
     @endif
 
-<<<<<<< HEAD
-    
-=======
-    <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
 
->>>>>>> 33e03ab58ac5382026dbd95cea4fa57417ba7145
-    @csrf
       <div class="row" id="div-papi">
         @foreach($products as $product)
       <div class="col-sm-6" id="div-producto{{$product->id}}">
@@ -70,16 +64,17 @@
 
 
                     <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
+                        @csrf
                       <!-- <input type="number" name="cantidad" min =1 value=""> -->
                       <button type="submit" class="btn btn-warning"  name="product_id" value="{{$product->id}}">Agregar al carrito</button>
-                    
+
 
 
                     @if((Auth::user())&& (Auth::user()->admin))
                       <a class="btn btn-success" href="/productos/editar/{{$product->id}}">Editar</a>
                       <a class="btn btn-success" href="#" data-toggle="modal" data-target="#producto{{$product->id}}">Borrar</a>
-                    
-                     
+
+
                     @endif
 
                   </form>
@@ -94,7 +89,7 @@
           <div class="modal fade" id="producto{{$product->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
-            
+
                   <form class="modal-eliminar" id="form-{{$product->id}}" action="/productos/delete/{{$product->id}}" method="post">
                     @csrf
                   <div class="modal-header">
@@ -108,34 +103,24 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Volver</button>
-            
+
                     <input type="hidden" name="id" value="{{$product->id}}">
                     <input type="submit" class="btn btn-danger" name="" value="Borrar Producto">
                   </div>
-            
+
                 </form>
-            
+
                 </div>
               </div>
             </div>
             <!-- end modal -->
         @endforeach
       </div>
-<<<<<<< HEAD
-   
-=======
-    </form>
 
-
-
->>>>>>> 33e03ab58ac5382026dbd95cea4fa57417ba7145
     {{$products->links()}}
 
 </div>
 
-
-
-<<<<<<< HEAD
 
 
 
@@ -145,6 +130,3 @@
 <script src="js/products.js"></script>
 
 @endsection
-=======
-@endsection
->>>>>>> 33e03ab58ac5382026dbd95cea4fa57417ba7145

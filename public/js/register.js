@@ -1,7 +1,7 @@
 var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 var regexName = /^[a-z A-Z]{3,30}$/;
 var regexLastname = /^[a-z A-Z]{3,30}$/;
-
+var regexAvatar = /.[jpeg|jpg|png]$/;
 
 function validarVacio(input) {
     if (input.value == '') {
@@ -26,7 +26,7 @@ function pintarError(input, mensaje) {
 }
 
 window.onload = function () {
-   
+
     var name = document.querySelector('#name');
     name.onblur = function () {
         if (regexName.test(this.value)) {
@@ -40,31 +40,49 @@ window.onload = function () {
             this.classList.remove('is-invalid');
         }
     }
-
-    var form = document.querySelector('form');
-
-    email.onblur = function () {
-        if (regexEmail.test(this.value)) {
+    var foto = document.querySelector('#foto');
+    foto.onblur = function () {
+        if (regexAvatar.test(this.value)) {
             this.classList.remove('is-invalid');
         }
     }
 
-  
+
+    var form = document.querySelector('form');
+    form.onblur = function () {
+        if (regexEmail.test(this.value)) {
+            this.classList.remove('is-invalid');
+        }
+    }
 
     form.onsubmit = function (event) {
         var elementos = this.elements;
         for (elemento of elementos) {
             if (elemento.type == 'submit' || elemento.type == 'hidden') {
                 continue;
-                
+
             }
-            if (elemento.type != 'file' && validarVacio(elemento)) {
+
+            if (elemento.name == 'name' &&  !regexName.test(elemento.value)) {
+                pintarError(elemento, 'Nombre invalido');
+                event.preventDefault();
+            }
+            if (elemento.name == 'lastname' &&  !regexLastname.test(elemento.value)) {
+                pintarError(elemento, 'Apellido invalido');
                 event.preventDefault();
             }
             if (elemento.name == 'email' &&  !regexEmail.test(elemento.value)) {
                 pintarError(elemento, 'Email invalido');
                 event.preventDefault();
             }
+            if (elemento.type != 'file' && validarVacio(elemento)) {
+                event.preventDefault();
+            }
+
+            if (elemento.type == 'file' && !regexAvatar.test(elemento.value)){
+             pintarError(elemento, 'La extension de la imagen tiene que ser .JPG,.JPEG,.PNG.')
+             event.preventDefault();
+         }
             if (elemento.name == 'password') {
                 var confirm = document.querySelector('#password-confirm');
                 if (elemento.value.length < 8) {
