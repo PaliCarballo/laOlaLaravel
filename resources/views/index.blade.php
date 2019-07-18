@@ -29,8 +29,7 @@
                 </div>
                 <img src="/storage/{{$product->avatar}}"alt="Combo 1 Hamburguesas Veggie">
             </article>
-
-            @endforeach
+          @endforeach
         </div>
   </section>
 
