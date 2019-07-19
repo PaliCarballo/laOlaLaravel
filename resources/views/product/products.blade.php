@@ -115,28 +115,12 @@
             <!-- end modal -->
         @endforeach
       </div>
-<<<<<<< HEAD
 
-=======
-    </form>
->>>>>>> d4c102ccb8c7881bb43684643bba89ec634de13c
     {{$products->links()}}
 
 </div>
 
-<<<<<<< HEAD
-
-
-
-
-
-=======
->>>>>>> d4c102ccb8c7881bb43684643bba89ec634de13c
 <script type="text/javascript" src="js/librerias.js"></script>
 <script src="js/products.js"></script>
 
 @endsection
-<<<<<<< HEAD
-=======
-
->>>>>>> d4c102ccb8c7881bb43684643bba89ec634de13c
