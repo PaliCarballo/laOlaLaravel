@@ -46,6 +46,11 @@
                     <p><em>Precio: $ {{$product->price}} </em></p> 
                 </div>
               
+                    <p style="color: #000!important;"> <em> Precio: $ {{$product->price}} </em></p>
+                </div>
+
+
+              </div>
             </div>
           </div>
 
@@ -67,12 +72,12 @@
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-danger" data-dismiss="modal">Volver</button>
-              
+
                       <input type="hidden" name="id" value="{{$product->id}}">
                       <input type="submit" class="btn btn-danger" name="" value="Borrar Producto">
                     </div>
                   </form>
-            
+
                 </div>
               </div>
             </div>

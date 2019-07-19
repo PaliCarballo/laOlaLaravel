@@ -17,7 +17,7 @@ class ProductoController extends Controller
     // buscador
     public function index()
     {
-      if (isset($_GET['name'])) 
+      if (isset($_GET['name']))
       {
         $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->paginate(3);
       } else
@@ -51,7 +51,7 @@ class ProductoController extends Controller
         if ($request->isJson()) {
           return response()->json(['mensaje' => 'que seas muy feliz']);
         }
-      return redirect('/productos')->with('mensaje', 'dibfgfddr!');
+      return redirect('/productos')->with('mensaje', 'Borrado de Producto exitoso!');
     }
 
 
