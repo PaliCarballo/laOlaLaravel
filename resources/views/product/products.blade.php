@@ -14,7 +14,7 @@
       </div>
     </form>
 
-    <h1 style="color: black; font-size: 3em; margin: 20px 0 0 15px;">NUESTROS PRODUCTOS</h1>
+    <h1 class="titulo-productos">// NUESTRAS <strong>HAMBURGUESAS</strong></h1>
 
 
     @if (session('mensaje'))
@@ -26,8 +26,7 @@
       <div class="row" id="div-papi">
         @foreach($products as $product)
           <div class="col-sm-4" id="div-producto{{$product->id}}">
-            <div class="card mb-3" style="max-width: 500px;">
-              <div class="row no-gutters">
+            <div class="card mb-3">
 
                 <div class="card-producto">
                   <div class="producto-hover">
@@ -44,11 +43,9 @@
 
                 <div class="titulo">
                     <a href="#"><h5>{{$product->name}}</h5></a>
-                    <p style="color: #000!important;"> <em> Precio: $ {{$product->price}} </em></p> 
+                    <p><em>Precio: $ {{$product->price}} </em></p> 
                 </div>
-                
-
-              </div>
+              
             </div>
           </div>
 

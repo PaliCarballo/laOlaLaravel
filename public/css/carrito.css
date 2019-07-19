@@ -1,3 +1,56 @@
+.carrito a {
+  border: 2px solid black;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  padding: 10px 24px;
+  transition:0.2s background-color;
+}
+.carrito a:hover, .carrito a:active {
+  border: 2px solid black;
+  background-color:#000!important;
+  color: #fff;
+  transform:translateY(2px);
+  transform:translateX(2px);
+}
+.carrito img {
+  width: 100%;
+  height: auto;
+}
+.carrito h1 {
+  color: black;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+.carrito button {
+  border: 2px solid black;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  padding: 10px 24px;
+  transition:0.2s background-color;
+}
+.carrito button:hover, .carrito button:active {
+  border: 2px solid black;
+  background-color:#fff!important;
+  color: #000;
+  transform:translateY(2px);
+  transform:translateX(2px);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+
 
 div.productos {
   display: flex;
@@ -42,20 +95,13 @@ div.total-carrito {
   justify-content: flex-end;
 }
 
-img {
-  width: 100%;
-  height: auto;
 
-  }
 
 div.cardp a {
   transition:0.2s background-color;
 }
 
-img.card-img {
-  width: 30%;
-  height: 30%;
-}
+
 
 @media (min-width:768px) {
   div.cardp {

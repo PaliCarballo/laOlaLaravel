@@ -2,8 +2,8 @@
 
 @section('contenido')
 <div class="container" style="margin-top: 50px;">
-    <a class="btn btn-success" href="/productos
-    ">Seguir Comprando</a>
+  <div class="carrito">
+    <a href="/productos">Seguir Comprando</a>
 
     <?php
           $suma = 0;
@@ -19,12 +19,12 @@
             <div class="card-group">
               <div class="card">
                   <div class="card-body" id="avatar-carrito" style="max">
-                  <img src="storage/{{$detalle->avatar}}" class="card-img" alt="..."alt="Max-width 10%">
+                  <img src="storage/{{$detalle->avatar}}" alt="">
                 </div>
               </div>
               <div class="card" id="prodcuto-nombre" >
                 <div class="card-body">
-                  <h5 style='color:black'  class="card-title">{{$detalle->name}}</h5>
+                  <h1>{{$detalle->name}}</h1>
               </div>
               </div>
               <div class="card" id="producto-precio">
@@ -41,7 +41,7 @@
               </div>
 
               <div class="card" id="boton-sacarCarrito">
-                <button type="submit" name="detalle_id" class="btn btn-dark active" value="{{$detalle->id}}">sacar del carrito</button>
+                <button type="submit" name="detalle_id" value="{{$detalle->id}}">sacar del carrito</button>
               </div>
             </div>
 
@@ -66,6 +66,10 @@
       <li class="list-group-item" ><strong>${{$suma}}</strong></li>
     </ul>
   </div>
+  
 
+  <button style="margin-bottom: 20px;" type="submit" name="" value="">Finalizar compra</button>
+
+  </div>
 </div>
    @endsection
