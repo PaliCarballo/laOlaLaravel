@@ -46,13 +46,12 @@
                     <p><em>Precio: $ {{$product->price}} </em></p> 
                 </div>
               
-                    <p style="color: #000!important;"> <em> Precio: $ {{$product->price}} </em></p>
+                   
                 </div>
 
 
               </div>
-            </div>
-          </div>
+            
 
             <!-- Modal -->
             <div class="modal fade" id="producto{{$product->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
