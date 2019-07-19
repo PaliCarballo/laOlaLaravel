@@ -36,22 +36,13 @@ class CarritoController extends Controller
   }
 
 
-
-
-
-
-
-
-
   public function miCarrito(){
     $user =Auth::user();
-
     $datalles=$user->carrito;
     return view('cart.carrito')
       ->with([
         'detalles' => $datalles
       ]);
-
   }
 
   public function cantidadNav(){

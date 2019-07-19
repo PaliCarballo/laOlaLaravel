@@ -24,13 +24,13 @@
             <article class="producto">
                 <div class="producto-hover">
                     <div class="producto-hover-content">
-                        <ion-icon name="heart"></ion-icon>   <h5 class="card-title"><a href='/productos?name={{$product->name}}' style="text-decoration: none; color: #fff; text-transform: uppercase; font-size: 1.5em">{{$product->name}}</a></h5>
+                        <i class="fas fa-heart"></i>  
+                        <a href='/productos?name={{$product->name}}'><h5>{{$product->name}}</h5></a>
                     </div>
                 </div>
                 <img src="/storage/{{$product->avatar}}"alt="Combo 1 Hamburguesas Veggie">
             </article>
-
-            @endforeach
+          @endforeach
         </div>
   </section>
 

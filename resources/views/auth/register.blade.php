@@ -9,7 +9,7 @@
                 <div class="card-header"><h4>{{ __('- REGISTRATE -') }}</h4></div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                    <form name="form" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
                       <div class="row">
                         <div class="col-sm-6">
@@ -73,16 +73,16 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="name" class="col-form-label text-md-left">Imagen de perfil</label>
-                                <input id="foto" type="file" class="form-control @error('foto') is-invalid @enderror" name="foto">
+                          <div class="form-group">
+                              <label for="foto">Subir imagen:</label>
 
-                                      @error('foto')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                      @enderror
-                            </div>
+                              <input type="file" id="foto" name="foto" class="form-control @error('foto') is-invalid @enderror">
+                              @error('foto')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                              @enderror
+                          </div>
                         </div>
 
 
@@ -95,12 +95,13 @@
 
                             </div>
                         </div>
-                        <div class="col-12">
 
+                     <!--   <div class="col-12">
                             <div class="col-sm-6">
                                 <a href="/login/facebook" class="btn btn-info">Ingresar con Facebook</a>
                             </div>
                         </div>
+                    -->
                       </div>
                     </form>
                 </div>

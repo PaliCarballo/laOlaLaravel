@@ -46,12 +46,6 @@
     transform:translateY(2px);
 }
 
- {
-    background-color:#000!important;
-    color: #fff!important;
-    transform:translateY(2px);
-}
-
 /* Seccion productos destacados */
 section {
   margin-top: 30px;
@@ -87,6 +81,7 @@ section {
   -webkit-transition: all ease 0.5s;
   -moz-transition: all ease 0.5s;
   display: none;
+
 }
 #productosDestacados .container-productos .producto .producto-hover:hover {
   opacity: 1;
@@ -100,6 +95,16 @@ section {
   top: 42%;
   margin-top: -12px;
   color: white;
+  padding: 0 20px;
+}
+#productosDestacados .container-productos .producto .producto-hover .producto-hover-content a{
+  text-decoration: none;
+}
+#productosDestacados .container-productos .producto .producto-hover .producto-hover-content h5 {
+  text-transform: uppercase;
+  font-size: 1.6em;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 
 /* Seccion Quienes Somos */

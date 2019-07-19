@@ -1,6 +1,6 @@
 <?php
 Route::get('/productos', 'ProductoController@index');
-
+Route::get('/productos/detalles/{id}', 'ProductoController@detalle');
 
 
 

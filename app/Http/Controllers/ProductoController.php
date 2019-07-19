@@ -8,27 +8,24 @@ use \App\Cart;
 
 class ProductoController extends Controller
 {
+    public function detalle($id)
+    {
+      $products = Product::find($id);
+      return view('product.detalles')->with( [ 'caca' => $products] );
+    }
 
-    // public function buscar(){
-    //
-    //
-    //
-    // }
-
+    // buscador
     public function index()
-  {
-
-
-        if(isset($_GET['name'])){
-
-              $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->paginate(4);
-            } else{
-              $products = Product::paginate(4);
-            }
-              return view('product.products')->with( [ 'products' => $products] );
-
-
-  }
+    {
+      if (isset($_GET['name']))
+      {
+        $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->paginate(3);
+      } else
+        {
+          $products = Product::paginate(3);
+        }
+          return view('product.products')->with( [ 'products' => $products] );
+    }
 
 
   public function borrarProducto($id)
@@ -54,7 +51,7 @@ class ProductoController extends Controller
         if ($request->isJson()) {
           return response()->json(['mensaje' => 'que seas muy feliz']);
         }
-      return redirect('/productos')->with('mensaje', 'dibfgfddr!');
+      return redirect('/productos')->with('mensaje', 'Borrado de Producto exitoso!');
     }
 
 
