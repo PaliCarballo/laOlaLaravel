@@ -16,17 +16,22 @@ class CarritoController extends Controller
   public function agregarAlCarrito(Request $request){
 
    $user =Auth::user();
-  $producto = $user->carrito->where('id', $request->product_id)->first();
+
+   $producto = $user->carrito->where('id', $request->product_id)->first();
   //  dd($producto);
 
     if ($producto) {
-   $cantidad = $producto->pivot->quantity + 1;
+      $cantidad = $producto->pivot->quantity + 1;
       $user->carrito()->updateExistingPivot($request->product_id,['quantity'=> $cantidad ]);
     } else {
       $user->carrito()->attach($request->product_id,['quantity'=> 1]);
+    }
 
+    if($request->isJson())
+    {
+      return response()->json(['exito' => true, 'cantidad' => $user->carrito->sum('quantity') ]);
+    }
 
-}
     return redirect('/productos');
   }
 

@@ -64,14 +64,14 @@
               <a class="nav-link" href="/preguntas"><i class="fas fa-question"></i></i></i><br>F.A.Q.</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/carrito"><i class="fas fa-shopping-cart"></i></ion-icon>
-              
+              <a class="nav-link" href="/carrito" ><i class="fas fa-shopping-cart"></i>
+
                @if($user = Auth::user())
-                ({{ $user->carrito()->count() }})
+                (<span id="cantCar">{{ $user->carrito()->sum('quantity') }}</span>)
               @endif
 
               <br> Carrito</a>
-              
+
             </li>
 
             @guest
