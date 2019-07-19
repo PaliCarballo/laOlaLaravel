@@ -1,50 +1,27 @@
-@extends('layouts.plantilla')
-
-@section('contenido')
-
-<div class="container">
-  <div class="row">
-   
-    <div class="col-sm-6">
-    
-    </div>
-    <div class="col-sm-6">
-      <h1>caca</h1>
-    </div>
-  </div>
-  
-   
-
-    @if (session('mensaje'))
-        <div class="alert alert-success">
-            {{ session('mensaje') }}
-        </div>
-    @endif
-
-    <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
+<form style="background:white" class="" action="/productos/agregarCarrito" method="post">
     @csrf
       <div class="row" id="div-papi">
-     
-      <div class="col-sm-6" id="div-producto{{$caca->name}}">
+        @foreach($products as $product)
+      <div class="col-sm-6" id="div-producto{{$product->id}}">
             <div class="card mb-3" style="max-width: 640px;">
               <div class="row no-gutters">
                 <div class="col-md-4">
                   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img src="/storage/{{$caca->avatar}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
+                        <img src="/storage/{{$product->avatar}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
                       </div>
                       <div class="carousel-item">
-                        <img src="/storage/{{$caca->avatar1}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
+                        <img src="/storage/{{$product->avatar1}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
                       </div>
                       <div class="carousel-item">
-                        <img src="/storage/{{$caca->avatar2}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
+                        <img src="/storage/{{$product->avatar2}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
                       </div>
                       <div class="carousel-item">
-                        <img src="/storage/{{$caca->avatar3}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
+                        <img src="/storage/{{$product->avatar3}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
                       </div>
                       <div class="carousel-item">
-                        <img src="/storage/{{$caca->avatar4}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
+                        <img src="/storage/{{$product->avatar4}}" class="d-block w-100" alt="Combo 1 Hamburguesas Veggie">
                       </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -59,25 +36,25 @@
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h5 class="card-title" style="color: black; text-transform: uppercase; font-size: 1.5em">{{$caca->name}}</h5>
-                    <h6 class="card-text" style="color:black; font-family: Quicksand, sans serif;">Ingredientes:<br> {{$caca->description}}</h6>
+                    <h5 class="card-title" style="color: black; text-transform: uppercase; font-size: 1.5em">{{$product->name}}</h5>
+                    <h6 class="card-text" style="color:black; font-family: Quicksand, sans serif;">Ingredientes:<br> {{$product->description}}</h6>
                     <br>
-                    <h6 class="card-text" style="color:black"><small class="text-muted">Precio: $ {{$caca->price}}</small></h6>
+                    <h6 class="card-text" style="color:black"><small class="text-muted">Precio: $ {{$product->price}}</small></h6>
                     <br>
 
 
                     <form style="background:white" class="" action="/productos/agregarCarrito" method="post">
                       <!-- <input type="number" name="cantidad" min =1 value=""> -->
-                      <button type="submit" class="btn btn-warning"  name="product_id" value="{{$caca->id}}">Agregar al carrito</button>
-{{--                     
+                      <button type="submit" class="btn btn-warning"  name="product_id" value="{{$product->id}}">Agregar al carrito</button>
+                    
 
 
                     @if((Auth::user())&& (Auth::user()->admin))
                       <a class="btn btn-success" href="/productos/editar/{{$product->id}}">Editar</a>
                       <a class="btn btn-success" href="#" data-toggle="modal" data-target="#producto{{$product->id}}">Borrar</a>
+                    
                      
-                     
-                    @endif--}}
+                    @endif
 
                   </form>
 
@@ -86,7 +63,7 @@
               </div>
             </div>
           </div>
-{{-- 
+
           <!-- Modal -->
           <div class="modal fade" id="producto{{$product->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -116,14 +93,7 @@
               </div>
             </div>
             <!-- end modal -->
-        @endforeach --}}
+        @endforeach
       </div>
     </form>
-    
-
-</div>
-
-<script type="text/javascript" src="js/librerias.js"></script>
-<script src="js/products.js"></script>
-
-@endsection
+    {{$products->links()}}
